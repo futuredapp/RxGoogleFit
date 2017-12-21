@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "com.funtasty.fittester"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                obfuscate false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/services/com.google.protobuf.GeneratedExtensionRegistryLoader'
+    }
+}
+
+dependencies {
+
+    final DAGGER_VERSION = '2.13'
+    final PLAY_SERVICES = '11.8.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+
+    // Google fit
+    implementation "com.google.android.gms:play-services-fitness:$PLAY_SERVICES"
+    implementation "com.google.android.gms:play-services-auth:$PLAY_SERVICES"
+    implementation 'com.patloew.rxfit:rxfit2:2.0.1'
+
+    // RxJava2
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // DI
+    implementation "com.google.dagger:dagger-android:$DAGGER_VERSION"
+    kapt 'org.glassfish:javax.annotation:10.0-b28'
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+
+    // Taste
+    implementation 'org.bitbucket.thefuntasty.taste:core:2.0.0-beta21'
+    implementation 'org.bitbucket.thefuntasty.taste:mvp:2.0.0-beta21'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

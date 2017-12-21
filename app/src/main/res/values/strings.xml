@@ -1,0 +1,1225 @@
+<resources>
+	<string name="app_name">fittester</string>
+
+	<string name="url_sukl">http://www.sukl.cz/modules/medication/download.php?file=%1$s&amp;type=pil&amp;as=%2$s</string>
+
+	<string name="google_maps_api_key" translatable="false">AIzaSyA4In2oP4Fx17RrYTMSwDIRgzV_Z2nZiw0</string>
+	<string name="google_play_services_uri">market://details?id=com.google.android.gms</string>
+
+	<string name="loading">Načítám…</string>
+	<string name="saving">Ukládám…</string>
+	<string name="deleting">Odstraňuji…</string>
+	<string name="sending">Odesílám…</string>
+	<string name="save">Uložit</string>
+	<string name="cancel">Zrušit</string>
+	<string name="delete">Smazat</string>
+	<string name="error">Chyba</string>
+	<string name="retry">Opakovat</string>
+	<string name="ok">OK</string>
+	<string name="range">%1$s - %2$s</string>
+	<string name="km">%d km</string>
+	<string name="m">%d m</string>
+	<string name="undefined">Nevyplněno</string>
+	<string name="nothing">""</string>
+	<string name="download_started">Stahuje se soubor %s</string>
+	<string name="download_error">Soubor %s se již stahuje</string>
+	<string name="network_error_title">Nejste připojeni k internetu</string>
+	<string name="network_error_subtitle">Najděte síť Wi-Fi nebo si zapněte  mobilní data. Zkuste to poté znovu.</string>
+	<string name="retry_load">Zkusit znovu</string>
+	<string name="loading_title">Načítám vaše data…</string>
+	<string name="loading_subtitle">Prosím chvíli strpení.</string>
+	<string name="offline_stripe_text">Nejste připojeni k internetu</string>
+
+	<!-- VerifyEmailActivity -->
+	<string name="verify_email_title">Váš e-mail není ověřen</string>
+	<string name="verify_email_explenation">Změna hesla vyžaduje ověřený e-mail</string>
+	<string name="verify_email_verification_offer">Obraťe se prosím na zákaznickou podporu.</string>
+	<string name="verify_email_send_verification_email">Zaslat e-mail s ověřením</string>
+	<string name="verify_email_call_center">Volat na callcentrum</string>
+
+	<!-- LoginActivity -->
+	<string name="login_insurance_number">Číslo pojištěnce</string>
+	<string name="login_insurance_number_hint">Číslo pojištěnce</string>
+	<string name="login_password_title">Heslo</string>
+	<string name="login_password_hint">Heslo</string>
+	<string name="login_login">Přihlásit</string>
+	<string name="login_create_account">Vytvořit účet</string>
+	<string name="login_forgot_password">Zapomenuté heslo</string>
+	<string name="login_error_title">Chyba</string>
+	<string name="login_error_general">Nastala neočekávaná chyba</string>
+	<string name="login_error_credentials">Špatné číslo pojištěnce nebo heslo</string>
+	<string name="login_error_grant">Neplatné pověření</string>
+	<string name="login_error_account_disabled">Účet není aktivní, byl vypnut</string>
+	<string name="login_error_account_blocked">Účet není aktivní, byl zabloklován</string>
+	<string name="login_error_temporary_locked">Účet byl po 3 neúspěšných pokusech o přihlášení na 15 minut uzamčen, nelze se dočasně přihlásit</string>
+	<string name="login_error_password_expired_title">Platnost vašeho hesla vypršela</string>
+	<string name="login_error_password_expired">Obnovte si heslo, abyste se mohli přihlásit do aplikace.</string>
+	<string name="login_error_empty_login">Musíte vyplnit číslo pojištěnce a heslo</string>
+	<string name="login_dismiss_dialog">zrušit</string>
+	<string name="login_error_network_error_title">Nejste připojeni k internetu</string>
+	<string name="login_error_network_error_content">Najděte síť Wi-Fi nebo si zapněte mobilní data. Zkuste to poté znovu.</string>
+
+	<!-- LoginVerifyActivity -->
+	<string name="login_verify_password_title">Heslo</string>
+	<string name="login_verify_password_hint">Heslo</string>
+	<string name="login_verify_unlock">Odemknout</string>
+	<string name="login_verify_not_you_logout">Nejste to vy? Změnit uživatele</string>
+	<string name="login_verify_forgot_your_password">Zapomněli jste heslo?</string>
+	<string name="login_verify_fill_your_password">Vyplňte prosím vaše heslo</string>
+	<string name="login_verify_login_failed">Přihlášení se nezdařilo. Ověřte prosím správnost vašeho hesla a dostupnost internetového připojení</string>
+
+	<!-- LoginVerifyFloatingActionButton -->
+	<string name="fab_ambulance">Záchranka</string>
+	<string name="fab_call_practitioner">Volat praktického lékaře</string>
+	<string name="fab_call_close_person">Volat osobu blízkou</string>
+	<string name="fab_emergency_dataset">Emergentní dataset</string>
+
+	<!-- AnamnesisActivity -->
+	<string name="anamnesis_title">Anamnéza</string>
+	<string name="anamnesis_gender">Pohlaví</string>
+	<string name="anamnesis_age">Věk</string>
+	<string name="anamnesis_height">Výška</string>
+	<string name="anamnesis_weight">Váha</string>
+	<string name="anamnesis_bmi">BMI</string>
+	<string name="anamnesis_blood_pressure">Krevní tlak</string>
+	<string name="anamnesis_heart_rate">Tep</string>
+	<string name="anamnesis_blood_type">Krevní skupina</string>
+	<string name="anamnesis_blood_type_empty">Nezadáno</string>
+	<string name="anamnesis_no_entry">Bez záznamu</string>
+	<string name="anamnesis_male">Muž</string>
+	<string name="anamnesis_female">Žena</string>
+	<string name="anamnesis_uni">Uni</string>
+	<string name="anamnesis_patient">Vlastní</string>
+	<string name="anamnesis_doctor">Od lékaře</string>
+
+	<!-- AnamnesisTabFragment-->
+	<string name="anamnesis_summary">Archiv souhrnných anamnéz</string>
+	<string name="anamnesis_personal">Osobní anamnéza</string>
+	<string name="anamnesis_medication">Léková anamnéza</string>
+	<string name="anamnesis_allergology">Alergologická anamnéza</string>
+	<string name="anamnesis_gynecological">Gynekologická anamnéza</string>
+	<string name="anamnesis_addictive_substances">Návykové látky</string>
+	<string name="anamnesis_family">Rodinná anamnéza</string>
+	<string name="anamnesis_work">Pracovní anamnéza</string>
+	<string name="anamnesis_social">Sociální anamnéza</string>
+
+	<!--AnamnesisDetailActivity-->
+	<string name="anamnesis_detail_empty">Nevyplněno</string>
+	<string name="anamnesis_detail_section_empty">Bez potíží</string>
+	<string name="anamnesis_detail_boolean_true">Ano</string>
+	<string name="anamnesis_detail_boolean_false">Ne</string>
+	<string name="anamnesis_detail_doctor_permanent_diagnosis">Trvalé diagnózy</string>
+	<string name="anamnesis_detail_doctor_dispensary_groups">Dispenzární skupiny</string>
+	<string name="anamnesis_detail_doctor_risk_factors">Rizikové faktory</string>
+	<string name="anamnesis_detail_doctor_conclusion">Popis</string>
+	<string name="anamnesis_detail_doctor_pernament_medication">Trvalá medikace</string>
+	<string name="anamnesis_detail_allergies">Alergie</string>
+	<string name="anamnesis_detail_contraceptions">Antikoncepce</string>
+	<string name="anamnesis_detail_first_menstruation_date">První menstruace</string>
+	<string name="anamnesis_detail_last_menstruation_date">Poslední menstruace</string>
+	<string name="anamnesis_detaiL_number_of_pregnancies">Počet těhotenství</string>
+	<string name="anamnesis_detaiL_birth_types">Typy porodu</string>
+	<string name="anamnesis_detail_interruption">Interupce</string>
+	<string name="anamnesis_detail_miscarriage">Potrat</string>
+	<string name="anamnesis_detail_cervical_cancer_vaccination">Očkování rakoviny děložního čípku</string>
+	<string name="anamnesis_detail_mamography">Mamografie</string>
+	<string name="anamnesis_detail_cigarettes">Cigarety</string>
+	<string name="anamnesis_detail_alcohol">Alkohol</string>
+	<string name="anamnesis_detail_coffee">Káva</string>
+	<string name="anamnesis_detail_soft_drugs">Měkké drogy</string>
+	<string name="anamnesis_detail_hard_drugs">Tvrdé drogy</string>
+	<string name="anamnesis_detail_doctor_code_date_from_template">%1$s (Kód: %2$s, od&#160;%3$s)</string>
+	<string name="anamnesis_detail_doctor_code_date_from_to_template">%1$s (Kód: %2$s, od&#160;%3$s do&#160;%4$s)</string>
+	<string name="anamnesis_detail_doctor_code_template">%1$s (Kód: %2$s)</string>
+	<string name="anamnesis_detail_doctor_archive">Archiv</string>
+	<string name="anamnesis_detail_empty_view_title">Žádné záznamy</string>
+	<string name="anamnesis_detail_epmty_view_subtitle">Zde se objeví záznamy,  které do anamnézy přidáte.</string>
+	<string name="anamnesis_detail_epmty_view_subtitle_doctor">Zde se objeví záznamy,  které do anamnézy přidá váš lékař.</string>
+
+	<!--AnamnesisDetailEditActivity-->
+	<string name="anamnesis_detail_edit_error_update">Změna anamnézy se nezdařila</string>
+	<string name="anamnesis_detail_edit_add_family">Přidat člena rodiny</string>
+	<string name="anamnesis_detail_edit_add_sport">Přidat sport</string>
+	<string name="anamnesis_detail_edit_add_operation">Přidat operaci</string>
+	<string name="anamnesis_detail_edit_add_injure">Přidat úraz</string>
+	<string name="anamnesis_detail_edit_add_illness">Přidat onemocnění</string>
+	<string name="anamnesis_detail_edit_label_operation">Operace</string>
+	<string name="anamnesis_detail_edit_label_injure">Úrazy</string>
+	<string name="anamnesis_detail_edit_label_illness">Onemocnění</string>
+	<string name="anamnesis_detail_edit_required_fields_error">Prosím vyplňte všechna povinná pole</string>
+
+	<!--AnamnesisArchiveActivity-->
+	<string name="anamnesis_archive_personal_anamnesis">Archiv osobní anamnézy</string>
+	<string name="anamnesis_archive_medication_anamnesis">Archiv lékové anamnézy</string>
+	<string name="anamnesis_archive_allergology_anamnesis">Archiv alergologické anamnézy</string>
+	<string name="anamnesis_archive_gynecology_anamnesis">Archiv gynekologické anamnézy</string>
+	<string name="anamnesis_archive_family_anamnesis">Archiv rodinné anamnézy</string>
+	<string name="anamnesis_archive_social_anamnesis">Archiv sociální anamnézy</string>
+	<string name="anamnesis_archive_work_anamnesis">Archiv pracovní anamnézy</string>
+
+	<!-- TimelineActivity -->
+	<string name="timeline_title">Časová osa</string>
+	<string name="timeline_comments">Komentáře</string>
+	<string name="timeline_comments_count">Komentáře (%d)</string>
+	<string name="timeline_report">Nahlásit</string>
+	<string name="timeline_approve">Schválit</string>
+	<string name="timeline_approved">Schváleno</string>
+	<string name="timeline_rate">Ohodnotit</string>
+	<string name="timeline_edit">Upravit</string>
+	<string name="timeline_delete">Smazat</string>
+	<string name="timeline_type_patient">Moje vlastní měření</string>
+	<string name="timeline_type_doctor">Záznam z pravidelné prohlídky</string>
+
+	<!-- TimelineFloatingActionButton -->
+	<string name="timeline_fab_add_record">Vyžádat záznam</string>
+	<string name="timeline_fab_add_vaccination">Přidej očkování</string>
+	<string name="timeline_fab_add_document">Přidej dokumenty</string>
+	<string name="timeline_fab_add_measurement">Přidej meření</string>
+	<string name="timeline_fab_add_note">Přidej poznámku</string>
+
+	<!-- TimelineItemMenuDialog -->
+	<string name="share_share">Sdílet</string>
+
+	<!-- TimelineNoteEditActivity -->
+	<string name="timeline_add_title">Nový záznam</string>
+	<string name="timeline_add_name">Název poznámky</string>
+	<string name="timeline_add_name_hint">Název poznámky</string>
+	<string name="timeline_add_date">Datum vložení</string>
+	<string name="timeline_add_date_hint">Datum vložení</string>
+	<string name="timeline_add_text">Co si chcete zapsat?</string>
+	<string name="timeline_add_text_hint">Text</string>
+	<string name="timeline_add_photo">Add photo</string>
+	<string name="timeline_add_save">Uložit</string>
+	<string name="timeline_add_error">Nepodařilo se přidat záznam</string>
+
+	<!-- TimelineRateActivity -->
+	<string name="timeline_rate_title">Hodnotit</string>
+	<string name="timeline_rate_rate">Ohodnoťte Vaší návštěvu lékaře</string>
+	<string name="timeline_rate_save">Uložit</string>
+	<string name="timeline_rate_save_error">Nepodařilo se ohodnotit záznam</string>
+
+	<!--TimelineCommentsActivity-->
+	<string name="timeline_comments_title">Okomentovat</string>
+
+	<!--TimelineReportActivity-->
+	<string name="timeline_report_title">Nahlásit záznam</string>
+	<string name="timeline_report_content">Našli jste nesrovnalosti v záznamu?\nNahlašte nám to, prosím.</string>
+	<string name="timeline_report_note">Poznámka</string>
+	<string name="timeline_report_note_hint">Napište poznámku…</string>
+	<string name="timeline_report_agreement">Souhlasím, aby bylo moje jméno a&#160;číslo pojištěnce použito při&#160;prověřování nesrovnalostí.</string>
+	<string name="timeline_report_send">Nahlásit</string>
+	<string name="timeline_report_error_cannot_report">Záznam se nepodařilo nahlásit</string>
+	<string name="timeline_report_success">Záznam byl nahlášen. Děkujeme.</string>
+
+	<!-- HomeFragment -->
+	<string name="home_authorization_needed">Je potřeba autorizovat váš účet</string>
+	<string name="home_authorization_next">Dále</string>
+	<string name="home_anamnesis">Anamnéza</string>
+	<string name="home_examination">Vyšetření</string>
+	<string name="home_vaccination">Očkování</string>
+	<string name="home_measurements">Měření</string>
+	<string name="home_medication">Medikace</string>
+	<string name="home_health_records">Zdravotní záznamy</string>
+	<string name="home_practitioners">Moji lékaři</string>
+	<string name="home_practitioners_speciality">Praktický lékař</string>
+	<string name="home_prevention">Prevence</string>
+	<string name="home_insurance">Vyúčtování</string>
+	<string name="home_insurance_valid">Platné</string>
+	<string name="home_insurance_invalid">Neplatné</string>
+	<string name="home_assistance">Poradna</string>
+	<string name="home_documents">Dokumentace</string>
+	<string name="home_laboratory_reports">Laboratoře</string>
+	<string name="home_emergency_dataset">Emergentní dataset</string>
+	<string name="home_travel_insurance">Na cesty</string>
+
+	<!-- TimelineFilterActivity -->
+	<string name="timeline_filter_title">Filtrovat záznamy</string>
+	<string name="timeline_filter_records_from">Záznamy od</string>
+	<string name="timeline_filter_records_to">Do</string>
+	<string name="timeline_filter_reset">Resetovat</string>
+	<string name="timeline_filter_button_action">Filtrovat</string>
+
+	<!-- TimelineYearFragment -->
+	<string name="timeline_year_empty_title">Žádné záznamy pro toto období</string>
+	<string name="timeline_year_empty_content">Zde se objeví záznamy, které přidá váš lékař. Můžete přidat i vlastní.</string>
+	<string name="timeline_year_report_error_cannot_sync_vaccination">Očkování se nepodařilo stáhnout. Oveřte prosím vaše připojení a akci opakujte.</string>
+	<string name="timeline_year_report_error_cannot_sync_document">Dokument se nepodařilo stáhnout. Oveřte prosím vaše připojení a akci opakujte.</string>
+	<string name="timeline_year_report_error_cannot_sync_measurement">Měření se nepodařilo stáhnout. Oveřte prosím vaše připojení a akci opakujte.</string>
+	<string name="timeline_year_report_error_cannot_sync_medication">Medikaci se nepodařilo stáhnout. Oveřte prosím vaše připojení a akci opakujte.</string>
+	<string name="timeline_year_report_error_cannot_sync_examination">Vyšetření se nepodařilo stáhnout. Oveřte prosím vaše připojení a akci opakujte.</string>
+	<string name="timeline_year_report_error_cannot_sync_prevention">Prevenci se nepodařilo stáhnout. Oveřte prosím vaše připojení a akci opakujte.</string>
+	<string name="timeline_year_report_error_cannot_delete">Položku se nepodařilo smazat. Oveřte prosím vaše připojení a akci opakujte.</string>
+	<string name="timeline_year_delete_item_confirm">Opravdu chcete tuto položku smazat?</string>
+	<string name="timeline_year_record_approval_failed">Schválení záznamu se nezdařilo</string>
+	<string name="timeline_year_more">Více</string>
+
+	<!-- SettingsIdentificationActivity -->
+	<string name="settings_identification_title">Nastavit identifikační údaje</string>
+	<string name="settings_identification_name">Jméno</string>
+	<string name="settings_identification_name_hint">Jméno</string>
+	<string name="settings_identification_surname">Příjmení</string>
+	<string name="settings_identification_surname_hint">Příjmení</string>
+	<string name="settings_identification_send">Požádat o změnu</string>
+	<string name="settings_identification_insurance_company_hint">Zdravotní pojišťovna</string>
+	<string name="settings_identification_error">Nepodařilo se načíst data</string>
+	<string name="settings_identification_sent_to_validation_title">Čekání na validaci</string>
+	<string name="settings_identification_sent_to_validation_content">V tuto chvíli nelze měnit identifikační údaje. Již probíhá validace.</string>
+	<string name="settings_identification_send_error">Nepodařilo se odeslat data</string>
+	<string name="settings_identification_insurance_error">Není vyplněna zdravotní pojišťovna</string>
+
+	<!-- SettingsContactActivity -->
+	<string name="settings_contact_title">Nastavit kontaktní údaje</string>
+	<string name="settings_contact_information">Kontaktní údaje</string>
+	<string name="settings_contact_phone">Telefonní číslo</string>
+	<string name="settings_contact_phone_hint">777123456</string>
+	<string name="settings_contact_phone_code">Předvolba</string>
+	<string name="settings_contact_permanent_address">Adresa (trvalé bydliště)</string>
+	<string name="settings_contact_permanent_street">Ulice a číslo popisné</string>
+	<string name="settings_contact_permanent_street_hint">Ulice a číslo popisné</string>
+	<string name="settings_contact_permanent_city">Město</string>
+	<string name="settings_contact_permanent_city_hint">Město</string>
+	<string name="settings_contact_permanent_zip">PSČ</string>
+	<string name="settings_contact_permanent_zip_hint">PSČ</string>
+	<string name="settings_contact_permanent_country">Země</string>
+	<string name="settings_contact_contact_address_checkbox">Adresa trvalého bydliště se liší od kontaktní adresy</string>
+	<string name="settings_contact_contact_address">Kontaktní adresa</string>
+	<string name="settings_contact_contact_street">Ulice a číslo popisné</string>
+	<string name="settings_contact_contact_street_hint">Ulice a číslo popisné</string>
+	<string name="settings_contact_contact_city">Město</string>
+	<string name="settings_contact_contact_city_hint">Město</string>
+	<string name="settings_contact_contact_zip">PSČ</string>
+	<string name="settings_contact_contact_zip_hint">PSČ</string>
+	<string name="settings_contact_contact_country">Země</string>
+	<string name="settings_contact_send">Uložit</string>
+	<string name="settings_contact_additional_information">Doplňující údaje</string>
+	<string name="settings_contact_degree_before">Titul před jménem</string>
+	<string name="settings_contact_degree_before_hint">Mgr.</string>
+	<string name="settings_contact_degree_after">Titul za jménem</string>
+	<string name="settings_contact_degree_after_hint">Ph.D.</string>
+	<string name="settings_contact_newsletter">Prohlášení o zasílání informací</string>
+	<string name="settings_contact_newsletter_agreement">Souhlasím s&#160;tím, aby&#160;ve&#160;smyslu ustanovení §&#160;7 zákona č. 480/2004&#160;Sb., o&#160;některých službách informační společnosti, byly podrobnosti mých elektronických kontaktů použity pro&#160;zasílání obchodních sdělení o&#160;výrobcích a&#160;službách třetích stran zaměřených na&#160;zdravotnictví a&#160;zdravý životní styl.</string>
+	<string name="settings_contact_insurance">Sdílení kontaktních údajů se zdravotní pojišťovnou</string>
+	<string name="settings_contact_insurance_agreement">Souhlasím s tím, že provozovatel systému ZDRAVEL může sdílet vybrané adresní a elektronické osobní kontaktní údaje s údaji zdravotní pojišťovny, u které jsem pojištěn.</string>
+	<string name="settings_contact_missing_phone_code">Vyplňte prosím vaši předvolbu</string>
+	<string name="settings_contact_missing_permanent_country">Vyplňte prosím stát u vaší trvalé adresy</string>
+	<string name="settings_contact_missing_contact_country">Vyplňte prosím stát u vaší kontaktní adresy</string>
+	<string name="settings_contact_error">Kontaktní údaje se nepodařilo uložit</string>
+	<string name="settings_contact_save_success">Změna kontaktních údajů proběhla úspěšně</string>
+
+	<!-- SettingsActivity -->
+	<string name="settings_title">Nastavení</string>
+	<string name="settings_access_rules">Upravit pravidla nahlížení</string>
+	<string name="settings_change_password">Změnit heslo</string>
+	<string name="settings_change_email">Změnit e-mail</string>
+	<string name="settings_change_identification">Nastavit identifikační údaje</string>
+	<string name="settings_change_contact">Nastavit kontaktní údaje</string>
+	<string name="settings_close_persons">Nastavit osoby blízké</string>
+	<string name="settings_google_fit">Nastavit Google Fit</string>
+	<string name="settings_account_history">Historie účtu</string>
+	<string name="settings_application_settings">Nastavení aplikace</string>
+	<string name="settings_about">O projektu</string>
+	<string name="settings_logout">Odhlásit se</string>
+	<string name="settings_dialog_logout_content">Opravdu se chcete odhlásit?</string>
+
+	<!-- SettingsPasswordActivity -->
+	<string name="settings_password_title">Změnit heslo</string>
+	<string name="settings_password_current">Stávající heslo</string>
+	<string name="settings_password_current_hint">Stávající heslo</string>
+	<string name="settings_password_new">Nové heslo</string>
+	<string name="settings_password_new_hint">Nové heslo</string>
+	<string name="settings_password_new_repeat">Nové heslo znovu</string>
+	<string name="settings_password_new_repeat_hint">Nové heslo znovu</string>
+	<string name="settings_password_change">Změnit heslo</string>
+	<string name="settings_password_mismatch">Zadaná hesla se neshodují</string>
+	<string name="settings_password_match">Zadané stávající a nové heslo se shoduje</string>
+	<string name="settings_password_current_error">Špatné stávající heslo</string>
+	<string name="settings_password_saved">Heslo bylo úspěšně změněno</string>
+	<string name="settings_password_missing">Nemáte vyplněna všechna pole</string>
+	<string name="settings_password_error">Nepodařilo se změnit heslo</string>
+	<string name="settings_password_weak">Vaše heslo je příliš krátké, neobsahuje velké písmeno nebo neobsahuje číslici</string>
+	<string name="settings_password_info">Vaše heslo musí obsahovat alespoň osm znaků, z&#160;toho jednu číslici a jedno velké písmeno.</string>
+
+	<!-- SettingsApplicationActivity -->
+	<string name="settings_application_title">Nastavení aplikace</string>
+	<string name="settings_application_lock">Automatické zamykání aplikace</string>
+	<string name="settings_application_lock_hint">Automatické zamykání aplikace</string>
+	<string name="settings_application_units_metric">Metrický systém</string>
+	<string name="settings_application_units_imperial">Imperiální systém</string>
+	<string name="settings_application_units">Jednotky</string>
+	<string name="settings_application_units_hints">Vyberte jednotky</string>
+	<string name="settings_application_notifications">Notifikace</string>
+	<string name="settings_application_notification_news">Novinky v systému</string>
+	<string name="settings_application_notification_messages">Zprávy</string>
+	<string name="settings_application_notification_medication">Události - léky</string>
+	<string name="settings_application_notification_vaccination">Události - očkování</string>
+	<string name="settings_application_notification_doctor">Události - návštěva lékaře</string>
+	<string name="settings_application_notification_other">Události - ostatní</string>
+	<string name="settings_application_fit_data">Data z aplikace Google FIt</string>
+	<string name="settings_application_fit_data_export">Importovat a exportovat data</string>
+	<string name="settings_application_google_fit_info">Zdravel bude moci číst a zapisovat data do aplikace Google Fit ve vašem telefonu.</string>
+
+	<!-- SettingsAboutActivity -->
+	<string name="settings_about_title">O projektu</string>
+	<string name="settings_about_text">Institut pro elektronizaci zdravotnictví byl jako nezisková společnost založen v roce 2017. Jeho hlavním cílem je elektronizace zdravotnictví, zjednodušení orientace občana v péči o zdraví a zvyšování zdravotní gramotnosti elektronickou cestou, tedy cestou, která zpřístupní občanovi informace o zdravotní péči, prevenci nemocí a podpoře zdraví.</string>
+
+	<!-- SettingsEmailActivity -->
+	<string name="settings_email_title">Změnit e-mail</string>
+	<string name="settings_email_verified_title">E-mail je ověřen</string>
+	<string name="settings_email_unverified_title">E-mail není ověřen</string>
+	<string name="settings_email_text">Po ověření e-mailu se aplikace stane plnohodnotnou a aktivují se všechny její funkce.</string>
+	<string name="settings_email_email">Váš e-mail</string>
+	<string name="settings_email_email_hint">emailovaadresa@email.com</string>
+	<string name="settings_email_send">Odeslat ověřovací e-mail</string>
+	<string name="settings_email_change">Změnit e-mail</string>
+	<string name="settings_email_change_error">Nepodařilo se změnit e-mail</string>
+	<string name="settings_email_change_success">Váš e-mail byl úspěšně změněn</string>
+	<string name="settings_email_send_success">Ověřovací e-mail byl úspěšně odeslán</string>
+	<string name="settings_email_send_error">Nepodařilo se odeslat ověřovací e-mail</string>
+
+	<!-- SettingsAccessRulesActivity -->
+	<string name="settings_access_rules_title">Upravit pravidla nahlížení</string>
+	<string name="settings_access_rules_rules">Pravidla nahlížení</string>
+	<string name="settings_access_rules_trusted_employees">Důvěrní pracovníci</string>
+	<string name="settings_access_rules_save_error">Nepodařilo se změnit pravidla nahlížení</string>
+	<string name="settings_access_rules_add_doctor_error">Tohoto lékaře už máte přidaného</string>
+	<string name="settings_access_rules_not_authorized_account_dialog_title">Účet není autorizován</string>
+	<string name="settings_access_rules_not_authorized_account_dialog_content">Nastavení není možné měnit.</string>
+
+	<!-- EndorsementsFragment -->
+	<string name="registration_endorsements_agree">Ano</string>
+	<string name="registration_endorsements_disagree">Ne</string>
+	<string name="registration_endorsements_personal_info">Zpracování osobních údajů</string>
+	<string name="registration_endorsements_health_info">Zdravotní informace pro ošetřující lékaře</string>
+	<string name="registration_endorsements_share_contact_info">Sdílení kontaktních údajů se zdravotní pojišťovnou</string>
+	<string name="registration_endorsements_sending_information">Prohlášení o&#160;zasílání informací</string>
+	<string name="registration_endorsements_health_info_text">Souhlasím s&#160;tím, aby&#160;všichni zdravotničtí pracovníci zaregistrovaní v&#160;systému ZDRAVEL získali oprávnění nahlížet do mého účtu v&#160;případě poskytování zdravotní péče mé osobě.</string>
+	<string name="registration_endorsements_share_contact_info_text">Souhlasím s&#160;tím, že provozovatel systému ZDRAVEL může sdílet vybrané adresní a&#160;elektronické osobní kontaktní údaje s&#160;údaji zdravotní pojišťovny, u&#160;které jsem pojištěn</string>
+	<string name="registration_endorsements_sending_information_text">Souhlasím s&#160;tím, aby&#160;ve&#160;smyslu ustanovení §&#160;7 zákona č. 480/2004&#160;Sb., o&#160;některých službách informační společnosti, byly podrobnosti mých elektronických kontaktů použity pro&#160;zasílání obchodních sdělení o&#160;výrobcích a&#160;službách třetích stran zaměřených na&#160;zdravotnictví a&#160;zdravý životní styl.</string>
+	<string name="registration_endorsements_continue">Pokračovat</string>
+	<string name="registration_endorsements_back">Zpět</string>
+	<string name="registration_endorsements_not_checked">Musíte označit všechny položky</string>
+	<string name="registration_endorsements_not_agreed">Pro pokračování musíte souhlasit s provozním řádem</string>
+	<string name="registration_endorsements_conclusion">Kterýkoli souhlas je poskytován na dobu, po kterou jste klientem/klientkou systému ZDRAVEL a můžete jej kdykoliv odvolat změnou nastavení po přihlášení do svého účtu v systému ZDRAVEL.</string>
+
+	<!-- ForgotPasswordActivity -->
+	<string name="forgot_password_title">Zapomenuté heslo</string>
+	<string name="forgot_password_forgot">Zapomněli jste heslo?</string>
+	<string name="forgot_password_description">Všechno je v pořádku. Vyplňte nám, prosím, váš e-mail a my jej pro vás resetujeme.</string>
+	<string name="forgot_password_insurance_number">Číslo pojištěnce</string>
+	<string name="forgot_password_insurance_number_hint">Číslo pojištěnce</string>
+	<string name="forgot_password_insurance_email">E-mail</string>
+	<string name="forgot_password_insurance_email_hint">E-mail</string>
+	<string name="forgot_password_reset">Resetovat heslo</string>
+	<string name="forgot_password_call_center">Volat na callcentrum</string>
+	<string name="forgot_password_fields_missing">Musíte vyplnit číslo pojištěnce a validní e-mail</string>
+	<string name="forgot_password_error">Nastala neočekávaná chyba</string>
+	<string name="forgot_password_credentials_error_title">Špatně zadané přihlašovací údaje</string>
+	<string name="forgot_password_credentials_error_content">Číslo pojištěnce a e-mail spolu nesouhlasí. Zkontrolujte, prosím, zda jste zadali jejich správnou kombinaci.</string>
+	<string name="forgot_password_successful">Odkaz na obnovení hesla byl odeslaný na Váš e-mail</string>
+
+
+	<!-- RenewPasswordActivity -->
+	<string name="renew_password_title">Obnovit heslo</string>
+	<string name="renew_password_renew">Obnovit heslo</string>
+	<string name="renew_password_subtitle">Obnovte si vypršené heslo</string>
+	<string name="renew_password_description">Vyplňte, prosím, váš e-mail a obržíte zprávu  s odkazem pro obnovu hesla.</string>
+	<string name="renew_password_insurance_number">Číslo pojištěnce</string>
+	<string name="renew_password_insurance_number_hint">Číslo pojištěnce</string>
+	<string name="renew_password_insurance_email">E-mail</string>
+	<string name="renew_password_insurance_email_hint">E-mail</string>
+	<string name="renew_password_call_center">Volat na callcentrum</string>
+	<string name="renew_password_fields_missing">Musíte vyplnit číslo pojištěnce a validní e-mail</string>
+	<string name="renew_password_error">Nastala neočekávaná chyba</string>
+	<string name="renew_password_successful">Odkaz na obnovení hesla byl odeslaný na Váš e-mail</string>
+
+	<!-- MeasurementsActivity -->
+	<string name="measurements_title">Měření</string>
+	<string name="measurements_add">přidejte</string>
+	<string name="measurements_add_mass_mesurement">Upravit</string>
+
+	<!-- MeasurementDetailActivity -->
+	<string name="measurements_detail_delete_error">Smazání meření se nezdařilo</string>
+	<string name="measurement_detail_my_measurement">Moje měření</string>
+
+	<!-- MeasurementType -->
+	<string name="measurement_type_height">Výška</string>
+	<string name="measurement_type_weight">Váha</string>
+	<string name="measurement_type_blood_pressure">Krevní tlak</string>
+	<string name="measurement_type_heart_rate">Srdeční tep</string>
+	<string name="measurement_type_cholesterol">Cholesterol</string>
+	<string name="measurement_type_blood_sugar">Hladina cukru</string>
+	<string name="measurement_type_bmi">BMI</string>
+
+	<!-- MeasurementAddActivity -->
+	<string name="measurement_add_blood_pressure">Tlak krve SYS</string>
+	<string name="measurement_add_blood_pressure2">Tlak krve DIA</string>
+	<string name="measurement_add_time">Čas</string>
+	<string name="measurement_add_time_hint">Čas</string>
+	<string name="measurement_add_date">Datum</string>
+	<string name="measurement_add_date_hint">Datum</string>
+	<string name="measurement_add_note">Poznámka</string>
+	<string name="measurement_add_note_hint">Poznámka</string>
+	<string name="measurement_add_save">Přidat</string>
+	<string name="measurement_add_invalid_number">Zadejte validní číslo</string>
+	<string name="measurement_add_error">Nepodařilo se přidat měření</string>
+	<string name="measurement_add_input_max_error">Zadaná hodnota je vyšší než maximální možná hodnota</string>
+	<string name="measurement_add_input_min_error">Zadaná hodnota je nižší než minimální možná hodnota</string>
+	<string name="measurement_edit">Změnit</string>
+	<string name="measurement_edit_error">Nepodařilo se změnit měření</string>
+	<string name="measurement_date_error">Zadané datum je menší než datum narození</string>
+	<string name="measurement_delete_error">Smazání meření se nezdařilo</string>
+	<string name="measurement_delete_confirmation">Opravdu chcete smazat toto měření?</string>
+	<string name="measurement_add_bulk_measurement">Upravit</string>
+
+	<!-- BulkMeasurementAddActivity-->
+	<string name="bulk_measurement_add_title">Hromadné měření</string>
+	<string name="bulk_measurement_add_height_label">Výška (cm)</string>
+	<string name="bulk_measurement_add_weight_label">Váha (kg)</string>
+	<string name="bulk_measurement_add_blood_sys_label">Tlak krve SYS (mmHg)</string>
+	<string name="bulk_measurement_add_blood_dia_label">Tlak krve DIA (mmHg)</string>
+	<string name="bulk_measurement_add_heartbeat_label">Srdeční tep (bpm)</string>
+	<string name="bulk_measurement_add_cholesterol_label">Cholesterol (mmol/L)</string>
+	<string name="bulk_measurement_add_sugar_label">Hladina cukru (mmol/L)</string>
+	<string name="bulk_measurement_add_save_error">Nepodařilo se odeslat data</string>
+	<string name="bulk_measurements_add_measurements_added">Měření byla uložena</string>
+	<string name="bulk_measurements_add_on_all_fields_empty">Vyplňte alespoň jednu hodnotu</string>
+
+	<!-- RegistrationStartActivity -->
+	<string name="registration_start_title">Registrace</string>
+	<string name="registration_start_title_izip">Vítejte zpět</string>
+	<string name="registration_start_insurance_title">Číslo pojištěnce</string>
+	<string name="registration_start_description">Toto číslo naleznete na vašem průkazu pojištěnce, vystaveném vaší pojištovnou.</string>
+	<string name="registration_start_description_izip">Zjistili jsme, že vaše číslo pojištěnce bylo registrované v systému IZIP. Jen pár kroků Vás dělí od vstupu do nového systému.</string>
+	<string name="registration_start_insurance_number">Číslo pojištěnce</string>
+	<string name="registration_start_insurance_number_hint">Číslo pojištěnce</string>
+	<string name="registration_start_password">IZIP Heslo</string>
+	<string name="registration_start_password_hint">IZIP heslo</string>
+	<string name="registration_start_continue">Pokračovat</string>
+	<string name="registration_start_login">Přihlásit</string>
+	<string name="registration_start_forgot_password">Zapomenuté heslo</string>
+	<string name="registration_start_operating_rules"><![CDATA[Jsem seznámen(a) s&nbsp;<a href="https://www.zdravel.cz/mceUploads/source/provozni-rad/provozni-rad-Zdravel.pdf">Provozním řádem</a> systému ZDRAVEL a&nbsp;<a href="https://www.zdravel.cz/mceUploads/source/obchodni-podminky/ZDRAVEL_obchodni_podminky.pdf">obchodními podmínkami</a> ZDRAVEL a&nbsp;souhlasím s&nbsp;nimi.]]></string>
+	<string name="registration_start_personal_data_processing"><![CDATA[Souhlasím s&nbsp;tím, že:<br><br>– provozovatel systému ZDRAVEL bude pro účely uvedené v&nbsp;<a href="https://www.zdravel.cz/mceUploads/source/provozni-rad/provozni-rad-Zdravel.pdf">Provozním řádu</a> zpracovávat mé osobní údaje obsažené v&nbsp;této Přihlášce klienta a&nbsp;také údaje o&nbsp;mém zdravotním stavu a&nbsp;o&nbsp;zdravotních službách, které mi byly poskytnuty, a&nbsp;to v&nbsp;rozsahu tímto <a href="https://www.zdravel.cz/mceUploads/source/provozni-rad/provozni-rad-Zdravel.pdf">Provozním řádem</a> stanoveném,<br><br>–  pro naplnění účelu systému ZDRAVEL budou poskytovatelé zdravotních služeb (registrovaní v&nbsp;systému ZDRAVEL) předávat provozovateli systému ZDRAVEL mé osobní údaje včetně citlivých údajů obsažených v&nbsp;mé zdravotnické dokumentaci vedené poskytovatelem zdravotních služeb a&nbsp;vztahující se k&nbsp;mému zdravotnímu stavu a&nbsp;ke&nbsp;zdravotním službám, které mi byly příslušným poskytovatelem zdravotních služeb poskytnuty,<br><br>– pro řádné a&nbsp;bezpečné zajištění  provozu systému ZDRAVEL bude jako moje identifikační číslo používáno číslo pojištěnce veřejného zdravotního pojištění.]]></string>
+	<string name="registration_start_invalid_insurance_id">Zadané číslo pojištěnce není platné</string>
+	<string name="registration_start_user_already_registered">Uživatel s tímto číslem pojištěnce již existuje. Přihlaste se prosím.</string>
+	<string name="registration_start_verify_error">Ověření čísla pojištěnce se nezdařilo. Ověřte prosím vaše připojení a akci opakujte.</string>
+	<string name="registration_start_missing_insurance_number">Zadejte prosím vaše číslo pojištěnce</string>
+
+	<!-- RegistrationActivity -->
+	<string name="registration_activity_title">Krok %d ze 4</string>
+
+	<!-- RegistrationIdentificationFragment -->
+	<string name="register_identification_basic_information">Základní údaje</string>
+	<string name="register_identification_degree_before">Titul před jménem</string>
+	<string name="register_identification_degree_before_hint">Mgr.</string>
+	<string name="register_identification_degree_after">Titul za jménem</string>
+	<string name="register_identification_degree_after_hint">Ph.D.</string>
+	<string name="register_identification_name">Jméno</string>
+	<string name="register_identification_name_hint">Jan</string>
+	<string name="register_identification_surname">Příjmení</string>
+	<string name="register_identification_surname_hint">Novák</string>
+	<string name="register_identification_gender">Pohlaví</string>
+	<string name="register_identification_contact_information">Kontaktní údaje</string>
+	<string name="register_identification_phone">Telefonní číslo</string>
+	<string name="register_identification_phone_code">Předvolba</string>
+	<string name="register_identification_phone_hint">777123456</string>
+	<string name="register_identification_email">E-mail</string>
+	<string name="register_identification_email_hint">emailovaadresa@email.com</string>
+	<string name="register_identification_permanent_address">Adresa (trvalé bydliště)</string>
+	<string name="register_identification_permanent_street">Ulice a číslo popisné</string>
+	<string name="register_identification_permanent_street_hint">Ulice a číslo popisné</string>
+	<string name="register_identification_permanent_city">Město</string>
+	<string name="register_identification_permanent_city_hint">Město</string>
+	<string name="register_identification_permanent_zip">PSČ</string>
+	<string name="register_identification_permanent_zip_hint">PSČ</string>
+	<string name="register_identification_permanent_country">Země</string>
+	<string name="register_identification_contact_address_checkbox">Adresa trvalého bydliště se liší od kontaktní adresy</string>
+	<string name="register_identification_contact_address">Kontaktní adresa</string>
+	<string name="register_identification_contact_street">Ulice a číslo popisné</string>
+	<string name="register_identification_contact_street_hint">Ulice a číslo popisné</string>
+	<string name="register_identification_contact_city">Město</string>
+	<string name="register_identification_contact_city_hint">Město</string>
+	<string name="register_identification_contact_zip">PSČ</string>
+	<string name="register_identification_contact_zip_hint">PSČ</string>
+	<string name="register_identification_contact_country">Země</string>
+	<string name="register_identification_continue">Pokračovat</string>
+	<string name="register_identification_back">Zpět</string>
+	<string name="register_identification_email_already_exist">Uživatel s tímto e-mailem již je v systému registrován</string>
+	<string name="register_identification_email_check_error">Nepodařilo se ověřit existenci e-mailu v systému Zdravel. Zkontrolujte vaše internetové připojení a akci opakujte.</string>
+	<string name="register_identification_missing_phone_code">Vyplňte prosím vaši předvolbu</string>
+	<string name="register_identification_missing_permanent_country">Vyplňte prosím stát u vaší trvalé adresy</string>
+	<string name="register_identification_missing_contact_country">Vyplňte prosím stát u vaší kontaktní adresy</string>
+
+	<!-- RegistrationInsuranceFragment -->
+	<string name="registration_insurance_title">Zdravotní pojištění</string>
+	<string name="registration_insurance_id">Číslo pojištěnce</string>
+	<string name="registration_insurance_id_hint">Číslo pojištěnce</string>
+	<string name="registration_insurance_company">Zdravotní pojišťovna</string>
+	<string name="registration_insurance_company_hint">Zdravotní pojišťovna</string>
+	<string name="registration_insurance_birthdate">Datum narození</string>
+	<string name="registration_insurance_birthdate_hint">Datum narození</string>
+	<string name="registration_insurance_practitioner">Praktický lékař</string>
+	<string name="registration_insurance_practitioner_name">Jméno praktického lékaře</string>
+	<string name="registration_insurance_practitioner_name_hint">Jméno lékaře, IČZ, IČP…</string>
+	<string name="registration_insurance_note">Můžete přeskočit tento krok, pokud nevíte všechny potřebné informace k identifikaci vašeho praktického lékaře. Pokud vyplníte tuto informaci, může váš praktik ověřit vaši totožnost.</string>
+	<string name="registration_insurance_continue">Pokračovat</string>
+	<string name="registration_insurance_back">Zpět</string>
+	<string name="registration_insurance_missing_insurance_company">Vyplňte prosím vaše zdravotní pojišťovnu</string>
+
+	<!-- RegistrationPasswordFragment -->
+	<string name="registration_password_title">Nastavte si své heslo</string>
+	<string name="registration_password_password">Heslo</string>
+	<string name="registration_password_password_hint">Heslo</string>
+	<string name="registration_password_password_repeat">Heslo znovu</string>
+	<string name="registration_password_password_repeat_hint">Heslo znovu</string>
+	<string name="registration_password_note">Vaše heslo musí mít alespoň osm znaků, z toho jednu číslici a jedno velké písmeno.</string>
+	<string name="registration_password_continue">Pokračovat</string>
+	<string name="registration_password_back">Zpět</string>
+	<string name="registration_password_error_password_not_matching">Zadaná hesla se neshodují</string>
+	<string name="registration_password_error_password_non_empty">Vyplňte prosím vaše heslo</string>
+	<string name="registration_password_error_weak_password">Vaše heslo je příliš krátké, neobsahuje velké písmeno nebo neobsahuje číslici</string>
+	<string name="registration_password_error_email_already_exist">Uživatel s tímto e-mailem již je v systému registrován</string>
+	<string name="registration_password_error_patient_creation_problem">Chyba při vytváření uživatele. Zkuste to prosím znovu</string>
+	<string name="registration_password_invalid_personal_id">Zadané číslo pojištěnce je neplatné</string>
+
+	<!-- RegistrationCompleteActivity -->
+	<string name="registration_complete_thanks">Vaše registrace je kompletní.\nDěkujeme!</string>
+	<string name="registration_complete_enjoy">Přejeme příjemné používání zdravotní aplikace Zdravel.</string>
+	<string name="registration_complete_continue">Pokračovat</string>
+
+	<!-- Validators -->
+	<string name="validator_error_text_phone">Telefonní číslo není ve správném formátu</string>
+	<string name="validator_error_text_empty">Tato položka je povinná</string>
+	<string name="validator_error_text_email">E-mailová adresa není ve správném tvaru</string>
+	<string name="validator_error_text_double">Toto číslo není ve správném tvaru</string>
+	<string name="validator_error_text_non_zero">Tato položka musí být nenulová</string>
+
+	<!-- ProfileFragment -->
+	<string name="profile_title">Profil</string>
+	<string name="profile_news">Novinky</string>
+	<string name="profile_family">Rodina</string>
+	<string name="profile_photo_network_error">Nepodařilo se odeslat data</string>
+	<string name="profile_twitter">Sledujte Zdravel na Twitteru</string>
+	<string name="profile_facebook">Sledujte Zdravel na Facebooku</string>
+
+	<!-- ClosePersonsActivity -->
+	<string name="close_persons_title">Osoby blízké</string>
+	<string name="close_persons_primary_person_title">Primární osoba blízká</string>
+	<string name="close_persons_other_people_title">Ostatní kontakty</string>
+	<string name="close_persons_empty_title">Žádné osoby blízké</string>
+	<string name="close_persons_empty_content">Přidejte kontakt na své blízké, urychlíte tak práci záchranným jednotkám v případě nouze. Jeden kontakt dokáže zachránit život!</string>
+
+	<!-- ClosePersonDetailActivity -->
+	<string name="close_person_detail_name">Jméno</string>
+	<string name="close_person_detail_name_hint">Jan</string>
+	<string name="close_person_detail_surname">Příjmení</string>
+	<string name="close_person_detail_surname_hint">Novák</string>
+	<string name="close_person_detail_phone">Telefonní číslo</string>
+	<string name="close_person_detail_phone_hint">777123456</string>
+	<string name="close_person_detail_phone_code">Předvolba</string>
+	<string name="close_person_detail_email">E-mail</string>
+	<string name="close_person_detail_email_hint">emailovaadresa@email.com</string>
+	<string name="close_person_detail_relationship">Příbuzenský vztah</string>
+	<string name="close_person_detail_street">Ulice</string>
+	<string name="close_person_detail_street_hint">Hlavní 100/1</string>
+	<string name="close_person_detail_city">Město</string>
+	<string name="close_person_detail_city_hint">Praha</string>
+	<string name="close_person_detail_postal_code">PSČ</string>
+	<string name="close_person_detail_postal_code_hint">14000</string>
+	<string name="close_person_detail_country">Země</string>
+	<string name="close_person_detail_set_as_primary">Nastavit jako primární kontakt</string>
+	<string name="close_person_detail_currently_set_as_primary">Osoba nastavena jako primární kontakt</string>
+	<string name="close_person_detail_title_add_new_close_person">Přidat novou osobu blízkou</string>
+	<string name="close_person_detail_title_edit_close_person">Upravit detaily osoby blízké</string>
+	<string name="close_person_detail_error_add">Přidání osoby blízké se nezdařilo</string>
+	<string name="close_person_detail_error_update">Úprava osoby blízké se nezdrařila</string>
+	<string name="close_person_detail_error_delete">Smazání osoby blízké se nezdařilo</string>
+	<string name="close_person_detail_error_missing_relationship">Vyplňte prosím váš příbuzenský vztah</string>
+
+	<!-- DoctorSearchActivity -->
+	<string name="doctor_search_hint">Jméno doktora …</string>
+	<string name="doctor_search_empty_title">Žádné výsledky</string>
+	<string name="doctor_search_empty_subtitle">Zadaného lékaře jsme nenašli.\n  Zkuste vyhledat jiného lékaře.</string>
+
+	<!--MyDoctorsActivity-->
+	<string name="my_doctors_title">Moji lékaři</string>
+	<string name="my_doctors_delete_error">Nepodařilo se smazat lékaře z mých lékařů</string>
+	<string name="my_doctors_delete_success">Lékař byl smazán z mých lékařů</string>
+	<string name="my_doctors_add_error">Nepodařilo se přidat lékaře</string>
+	<string name="my_doctors_empty_title">Žádní lékaři</string>
+	<string name="my_doctors_empty_subtitle">Přidejte si vaše lékaře.</string>
+	<string name="my_doctors_practitioner_label">Praktický lékař</string>
+
+	<!--DoctorDetailActivity-->
+	<string name="doctor_detail_title">Profil lékaře</string>
+	<string name="doctor_detail_tel">Tel:</string>
+	<string name="doctor_detail_mail">E-mail:</string>
+	<string name="doctor_detail_nurse">Sestra:</string>
+	<string name="doctor_detail_registered_in_zdravel">Registrovaný v systému Zdravel</string>
+	<string name="doctor_detail_not_registered_in_zdravel">Není registrovaný v systému Zdravel</string>
+	<string name="doctor_detail_monday">Po: %s</string>
+	<string name="doctor_detail_tuesday">Ut: %s</string>
+	<string name="doctor_detail_wednesday">St: %s</string>
+	<string name="doctor_detail_thursday">Čt: %s</string>
+	<string name="doctor_detail_friday">Pá: %s</string>
+	<string name="doctor_detail_saturday">So: %s</string>
+	<string name="doctor_detail_sunday">Ne: %s</string>
+	<string name="doctor_detail_closed">zavřeno</string>
+	<string name="doctor_detail_notice">Poznámka: %s</string>
+	<string name="doctor_detail_set_as_practitioner">Nastavit jako praktického lékaře</string>
+	<string name="doctor_detail_add_to_my_doctors">Přidat mezi mé lékaře</string>
+	<string name="doctor_detail_remove_from_my_doctors">Odebrat z mých lékařů</string>
+	<string name="doctor_detail_request_record">Vyžádat záznam</string>
+	<string name="doctor_detail_order_examination">Objednat vyšetření</string>
+	<string name="doctor_detail_contact">Kontaktovat lékaře</string>
+	<string name="doctor_detail_add_to_my_doctor_success">Lékař byl přidaný do mých lékařů</string>
+	<string name="doctor_detail_add_to_my_doctor_error">Nepodařilo se přidat lékaře do mých lékařů</string>
+	<string name="doctor_detail_set_as_practitioner_title">Nastavit jako praktického lékaře</string>
+	<string name="doctor_detail_set_as_practitioner_description">Změna praktického lékaře v systému Zdravel je pouze informativní a nenahrazuje standardní proces změny praktického lékaře</string>
+	<string name="doctor_detail_set_as_practitioner_success">Lékař byl nastaven jako praktický lékař</string>
+	<string name="doctor_detail_set_as_practitioner_error">Nepodařilo se nastavit jako praktického lékaře</string>
+
+	<!-- AuthorizationActivity -->
+	<string name="authorization_title">Autorizace</string>
+	<string name="authorization_text">Proveďte autorizaci Vašeho účtu a využívejte tak funkce systému ZDRAVEL naplno. Autorizací účtu si budeme jisti, že sdílíme správná zdravotní data se správným člověkem.</string>
+	<string name="authorization_pin_mail">Pinová zásilka</string>
+	<string name="authorization_practitioner">Praktický lékař</string>
+	<string name="authorization_czechpoint">CzechPoint</string>
+	<string name="authorization_confirmation_asked_title">Zažádali jste o autorizaci pomocí pinové zásilky.</string>
+	<string name="authorization_confirmation_asked_message">Způsob autorizace zpětně nelze změnit. V případě dotazů nebo problémů se, prosím, obraťte na naši podporu:</string>
+	<string name="authorization_confirmation_asked_phone">Zavolat +420 212 288 100</string>
+	<string name="authorization_support_phone_number">+420 212 288 100</string>
+
+	<!-- AuthorizationCzechPointActivity -->
+	<string name="authorization_czech_point_title">Czech Point</string>
+	<string name="authorization_czech_point_text">Využijte k autorizaci jakoukoliv pobočku CzechPoint, kde na počkání ověří Vaši identitu. Potvrzovací PIN Vám následně přijde skrze SMS nebo osobní e-mailovou adresu. PIN pak jednoduše doplníte do Vašeho profilu a můžete plně využívat systém ZDRAVEL.</string>
+	<string name="authorization_czech_point_price">Cena 80 Kč</string>
+	<string name="authorization_czech_point_map">Mapa poboček Czech Point</string>
+
+	<!-- AuthorizationPinActivity -->
+	<string name="authorization_pin_title">Pinová zásilka</string>
+	<string name="authorization_pin_text">Využijte možnost dodání pinové obálky poštou do vlastních rukou. PIN pak jednoduše doplníte do Vašeho profilu a můžete plně využívat systém ZDRAVEL. </string>
+	<string name="authorization_pin_expiry_text">Pinovou obálku zasíláme na adresu, uvedenou při Vaší registraci.</string>
+	<string name="authorization_pin_price">Cena 80 Kč</string>
+	<string name="authorization_pin_credit_card">Zaplatit kartou</string>
+	<string name="authorization_pin_bank_transfer">Zaplatit převodem</string>
+	<string name="authorization_pin_send_pin">Zaslat PIN poštou</string>
+	<string name="authorization_pin_request_sent">Žádost byla odeslána.</string>
+	<string name="authorization_pin_request_error">Žádost se nepodařilo odeslat.</string>
+	<string name="authorization_pin_dialog_title">Zásilka se připravuje na cestu k Vám</string>
+	<string name="authorization_pin_dialog_message">Doručí ji Česká pošta do vlastních rukou.</string>
+	<string name="authorization_pin_dialog_ok">OK</string>
+	<string name="authorization_pin_dialog_loading">Odesílám požadavek..</string>
+
+
+	<!-- AuthorizationBankTransferActivity -->
+	<string name="authorization_bank_title">Platba převodem</string>
+	<string name="authorization_bank_text">Děkujeme za volbu platby autorizace. Prosím, proveďte platbu dle uvedených údajů níže. PINovou zásilku očekávejte do 4–10 pracovních dnů od provedení platby.</string>
+	<string name="authorization_bank_payment_info">Platební údaje</string>
+	<string name="authorization_bank_account">Číslo účtu: %s</string>
+	<string name="authorization_bank_variable_symbol">Variabilní symbol: %s</string>
+	<string name="authorization_bank_constant_symbol">Konstantní symbol: %s</string>
+
+	<!-- AuthorizationPractitionerActivity -->
+	<string name="authorization_practitioner_title">Praktický lékař</string>
+	<string name="authorization_practitioner_text">Autorizujte se během návštěvy u Vašeho praktického lékaře, který může snadno ověřit vaši identitu a rovnou do Vaše profilu doplnit Vás dlouhodobý zdravotní stav, aktuální medikaci nebo jiné zdravotní záznamy. Potvrzovací PIN Vám následně přijde skrze SMS nebo osobní e-mailovou adresu. PIN pak jednoduše doplníte do Vašeho profilu a můžete plně využívat systém ZDRAVEL.</string>
+	<string name="authorization_practitioner_price">Cena 80 Kč</string>
+	<string name="authorization_practitioner_practitioner">Praktický lékař</string>
+	<string name="authorization_practitioner_call">Zavolat praktickému lékaři</string>
+	<string name="authorization_practitioner_tel">Tel:</string>
+	<string name="authorization_practitioner_email">E-mail:</string>
+	<string name="authorization_practitioner_web">Web:</string>
+
+	<!-- MedicamentSearchActivity -->
+	<string name="medicament_search_scan">Skenovat</string>
+	<string name="medicament_search_medicament_name_hint">Název léku …</string>
+	<string name="medicament_search_empty_title">Žádné výsledky</string>
+	<string name="medicament_search_empty_subtitle">Pro zadaný výraz jsme nic nenašli. Zkuste vyhledat jiný lék.</string>
+
+	<!-- MedicamentDetailActivity -->
+	<string name="medicament_detail_title">Detail léku</string>
+	<string name="medicament_detail_name">Název léku</string>
+	<string name="medicament_detail_form">Léková forma</string>
+	<string name="medicament_detail_route">Cesta podání</string>
+	<string name="medicament_detail_legal_status">Režim výdeje</string>
+	<string name="medicament_detail_strength">Síla</string>
+	<string name="medicament_detail_wrap_type">Typ balení</string>
+	<string name="medicament_detail_active_substance">Účinná látka</string>
+	<string name="medicament_detail_atc_code">ATC kód</string>
+	<string name="medicament_detail_producer">Výrobce</string>
+	<string name="medicament_detail_pdf_url">Příbalová informace (PDF)</string>
+	<string name="medicament_detail_producer_url">Web výrobce</string>
+
+	<!-- MyMedicationEditActivity -->
+	<string name="my_medication_title">Medikace</string>
+	<string name="my_medication_medicament_name">Název léku</string>
+	<string name="my_medication_usage_date_from">Užívám lék od</string>
+	<string name="my_medication_usage_date_to">Do</string>
+	<string name="my_medication_permanent_medication">Trvalá medikace</string>
+	<string name="my_medication_temporary_medication">Dočasná medikace</string>
+	<string name="my_medication_quantity_unit">Jednotka dávky</string>
+	<string name="my_medication_want_reminders">Chci dostávat upomínky</string>
+	<string name="my_medication_dosage">Dávka (%s)</string>
+	<string name="my_medication_dosage_hint">Množství</string>
+	<string name="my_medication_dosage_interval_value">Interval</string>
+	<string name="my_medication_dosage_interval_value_non_editable">%1$s %2$s</string>
+	<string name="my_medication_dosage_interval_unit">Jednotka</string>
+	<string name="my_medication_amount">Množství</string>
+	<string name="my_medication_last_dose_date">Datum poslední dávky</string>
+	<string name="my_medication_last_dose_date_hint">Datum poslední dávky</string>
+	<string name="my_medication_last_dose_time">Čas poslední dávky</string>
+	<string name="my_medication_last_dose_time_hint">Čas poslední dávky</string>
+	<string name="my_medication_reminders">Upomínky</string>
+	<string name="my_medication_reminder">Upomínka</string>
+	<string name="my_medication_reminder_time">Upomínky</string>
+	<string name="my_medication_title_update_medication">Upravit medikaci</string>
+	<string name="my_medication_title_new_medicament">Nová medikace</string>
+	<string name="my_medication_list_item_text">Užíván od %1$s do %2$s</string>
+	<string name="my_medication_list_item_text_permanent">Trvale užíván od %1$s</string>
+	<string name="my_medication_empty_title">Žádné medikace</string>
+	<string name="my_medication_empty_subtitle">Zde se objeví medikace, které přidá váš lékař. Nebo je můžete přidat sami.</string>
+	<string name="my_medication_delete_confirmation">Opravdu chcete smazat tuto medikaci?</string>
+	<string name="my_medication_delete_error">Nepodařilo se smazat medikaci</string>
+	<string name="my_medication_next_dose_time">Příští dávka: %1$s, %2$s</string>
+	<string name="my_medication_note">Poznámka</string>
+	<string name="my_medication_note_hint">Poznámka k užívaní</string>
+	<string name="my_medication_tab_interval">V intervalech</string>
+	<string name="my_medication_tab_exact_times">V daných časech</string>
+	<string name="my_medication_tab_doctor_note">Poznámka</string>
+	<string name="my_medication_empty_reminder">Žádná</string>
+	<string name="my_medication_add_reminder">Přidat dávku</string>
+	<string name="my_medication_morning">Ráno</string>
+	<string name="my_medication_noon">Poledne</string>
+	<string name="my_medication_evening">Večer</string>
+	<string name="my_medication_night">Noc</string>
+	<string name="my_medication_morning_amount">Ráno (%s)</string>
+	<string name="my_medication_noon_amount">Poledne (%s)</string>
+	<string name="my_medication_evening_amount">Večer (%s)</string>
+	<string name="my_medication_night_amount">Noc (%s)</string>
+	<string name="my_medication_reminder_scheduled">Upomínka nastavena na %1$s, %2$s</string>
+	<string name="my_medication_interval_unit_minutes_long">Minuta</string>
+	<string name="my_medication_interval_unit_minutes_short">m</string>
+	<string name="my_medication_interval_unit_hours_long">Hodina</string>
+	<string name="my_medication_interval_unit_hours_short">h</string>
+	<string name="my_medication_interval_unit_days_short">d</string>
+	<string name="my_medication_interval_unit_days_long">Den</string>
+	<string name="my_medication_save_error">Nepodařilo se uložit medikaci</string>
+	<string name="my_medication_dosage_quantity">Dávka</string>
+
+	<!-- MyMedicationDetailActivity -->
+	<string name="my_medication_detail_title">Detail medikace</string>
+	<string name="my_medication_detail_medicament_name">Název léku</string>
+	<string name="my_medication_detail_usage_date_from">Užívám lék od</string>
+	<string name="my_medication_detail_usage_date_to">Do</string>
+
+	<!-- DosageUnitDataset -->
+	<string name="dosage_unit_dataset_mililiter">Mililitr</string>
+	<string name="dosage_unit_dataset_mililiter_shortcut">ml</string>
+	<string name="dosage_unit_dataset_tablets">Tablety</string>
+	<string name="dosage_unit_dataset_tablets_shortcut">tabl.</string>
+	<string name="dosage_unit_dataset_drops">Kapky</string>
+	<string name="dosage_unit_dataset_drops_shortcut">kap.</string>
+
+	<!-- DosageIntervalView reminder before -->
+	<string name="dosage_interval_on_time">V čase dávky</string>
+	<string name="dosage_interval_five_minutes_before">5 min předem</string>
+	<string name="dosage_interval_ten_minutes_before">10 min předem</string>
+	<string name="dosage_interval_fifteen_minutes_before">15 min předem</string>
+	<string name="dosage_interval_thirty_minutes_before">30 min předem</string>
+	<string name="dosage_interval_one_hour_before">1 hod předem</string>
+	<string name="dosage_interval_two_hours_before">2 hod předem</string>
+	<string name="dosage_interval_one_day_before">1 den předem</string>
+
+	<!-- ConversationsFragment -->
+	<string name="conversations_title">Konverzace</string>
+	<string name="conversations_empty_title">Žádné konverzace</string>
+	<string name="conversations_empty_subtitle">Zde se objeví všechny konverzace, které  povedete se svými lékaři.</string>
+
+	<!-- ConversationDetailActivity -->
+	<string name="conversation_detail_message_hint">Vaše zpráva …</string>
+	<string name="conversation_detail_loading">Odesílám…</string>
+	<string name="conversation_detail_error">Nepodařilo se odeslat zprávu</string>
+	<string name="conversation_detail_request_record_title">Zaslána žádost o záznam z %s:\n</string>
+
+	<!-- SettingsAccountHistoryActivity -->
+	<string name="settings_history_title">Historie účtu</string>
+	<string name="settings_history_empty_title">Žádná historie</string>
+	<string name="settings_history_empty_subtitle">Zde se objeví změny, které se týkají vašeho účtu.</string>
+
+	<!-- EmergencyDatasetActivity -->
+	<string name="emergency_dataset_title">Emergentní dataset</string>
+	<string name="emergency_dataset_tab_sos">SOS nabídka</string>
+	<string name="emergency_dataset_tab_all">Všechny</string>
+	<string name="emergency_dataset_insurance">%1$s (%2$s)</string>
+	<string name="emergency_dataset_age">Věk</string>
+	<string name="emergency_dataset_blood_type">Krevní skupina</string>
+	<string name="emergency_dataset_contact_info">Kontaktní informace</string>
+	<string name="emergency_dataset_telephone">Telefonní číslo</string>
+	<string name="emergency_dataset_permanent_address">Trvalá adresa</string>
+	<string name="emergency_dataset_contact_address">Kontaktní adresa</string>
+	<string name="emergency_dataset_email">E-mail</string>
+	<string name="emergency_dataset_risk_factors">Rizikové faktory</string>
+	<string name="emergency_dataset_allergy">Alergie</string>
+	<string name="emergency_dataset_chronic_diagnoses">Chronické diagnózy</string>
+	<string name="emergency_dataset_temporary_diagnoses">Přechodné diagnózy</string>
+	<string name="emergency_dataset_hospitalizations">Hospitalizace za poslední 3 roky</string>
+	<string name="emergency_dataset_permanent_medications">Trvalé medikace</string>
+	<string name="emergency_dataset_permanent_medications_date">Trvale užíván od %1$s</string>
+	<string name="emergency_dataset_temporary_medications">Předepsané medikace</string>
+	<string name="emergency_dataset_last_tetanus">Poslední očkování proti tetanu</string>
+	<string name="emergency_dataset_primary_close_person">Primární osoba blízká</string>
+	<string name="emergency_dataset_close_persons">Ostatní osoby blízké</string>
+	<string name="emergency_dataset_empty">Informace z vašeho Emergentního datasetu jste nastavil(a) jako soukromé a nebudou viditelné v SOS menu.</string>
+	<string name="emergency_dataset_adapter_empty">Bez záznamu</string>
+
+	<!-- EmergencyDatasetSettingsActivity -->
+	<string name="emergency_dataset_settings_title">Upravit viditelnost údajů</string>
+	<string name="emergency_dataset_settings_description">Nastavte si, které zdravotní údaje budou k dispozici v SOS menu aplikace. Tyto údaje budou přístupné i když nebudete do aplikace přihlášen(a).</string>
+	<string name="emergency_dataset_settings_basic">Základní informace</string>
+	<string name="emergency_dataset_settings_insurance">Pojišťovna a číslo pojištěnce</string>
+	<string name="emergency_dataset_settings_blood_type">Krevní skupina</string>
+	<string name="emergency_dataset_settings_contact_info">Kontaktní informace</string>
+	<string name="emergency_dataset_settings_phone">Telefon</string>
+	<string name="emergency_dataset_settings_permanent_address">Trvalá adresa</string>
+	<string name="emergency_dataset_settings_contact_address">Kontaktní adresa</string>
+	<string name="emergency_dataset_settings_email">Email</string>
+	<string name="emergency_dataset_settings_medical_info">Zdravotní informace</string>
+	<string name="emergency_dataset_settings_risk_factors">Rizikové faktory</string>
+	<string name="emergency_dataset_settings_allergy">Alergie</string>
+	<string name="emergency_dataset_settings_chronic_diagnoses">Chronické diagnózy</string>
+	<string name="emergency_dataset_settings_temporary_diagnoses">Přechodné diagnózy</string>
+	<string name="emergency_dataset_settings_hospitalizations">Hospitalizace za poslední 3 roky</string>
+	<string name="emergency_dataset_settings_permanent_medications">Trvalé medikace</string>
+	<string name="emergency_dataset_settings_temporary_medications">Předepsané medikace</string>
+	<string name="emergency_dataset_settings_last_tetanus">Poslední očkování proti tetanu</string>
+	<string name="emergency_dataset_settings_primary_close_person">Primární osoba blízká</string>
+	<string name="emergency_dataset_settings_close_persons">Ostatní osoby blízké</string>
+
+	<!-- EpidemiologicalAnamnesisActivity -->
+	<string name="epidemiological_anamnesis_title">Epidemiologická anamnéza</string>
+	<string name="epidemiological_anamnesis_diseases">Choroby</string>
+	<string name="epidemiological_anamnesis_diseases_empty">Bez potíží</string>
+	<string name="epidemiological_anamnesis_other">Jiná diagnóza</string>
+	<string name="epidemiological_anamnesis_other_empty">Nevyplněno</string>
+
+	<!-- EpidemiologicalAnamnesisEditActivity -->
+	<string name="epidemiological_anamnesis_edit_title">Epidemiologická anamnéza</string>
+	<string name="epidemiological_anamnesis_edit_diseases">Choroby</string>
+	<string name="epidemiological_anamnesis_edit_error">Změna epidemiologické anamnézy se nezdařila</string>
+	<string name="epidemiological_anamnesis_edit_other">Jiná diagnóza</string>
+	<string name="epidemiological_anamnesis_edit_other_hint">Nevyplněno</string>
+
+	<!-- AllergologyAnamnesisActivity -->
+	<string name="allergology_anamnesis_title">Alergologická anamnéza</string>
+	<string name="allergology_anamnesis_general">Obecné</string>
+	<string name="allergology_anamnesis_other_allergies">Jiné alergie</string>
+	<string name="allergology_anamnesis_other_empty">Nevyplněno</string>
+	<string name="allergology_anamnesis_section_empty">Bez potíží</string>
+
+	<!-- AllergologyAnamnesisEditActivity -->
+	<string name="allergology_anamnesis_edit_title">Alergologická anamnéza</string>
+	<string name="allergology_anamnesis_edit_error">Změna alergologické anamnézy se nezdařila</string>
+
+	<!-- MedicationAnamnesisActivity -->
+	<string name="medication_anamnesis_title">Medikační anamnéza</string>
+	<string name="medication_anamnesis_medications">Trvalá medikace</string>
+	<string name="medication_anamnesis_supplements">Vitamíny a doplňky stravy</string>
+	<string name="medication_anamnesis_other_medications">Jiné medikace</string>
+
+	<!-- MedicationAnamnesisEditActivity -->
+	<string name="medication_anamnesis_edit_title">Medikační anamnéza</string>
+	<string name="medication_anamnesis_edit_error">Změna medikační anamnézy se nezdařila</string>
+	<string name="medication_anamnesis_edit_add">Přidat medikaci</string>
+
+	<!-- DoctorsNearbyFragment-->
+	<string name="doctors_nearby_title">Lékaři v okolí</string>
+	<string name="doctors_nearby_search_hint">Jméno, lokalita… </string>
+	<string name="doctors_nearby_no_location_permission">Pro zobrazení této sekce prosím povolte přístup k poloze.</string>
+	<string name="doctors_nearby_no_location_request_permission">Povolit přístup k poloze</string>
+
+	<!-- NearbyDoctorFilterActivity -->
+	<string name="doctors_nearby_filter_title">Filtrovat lékaře</string>
+	<string name="doctors_nearby_filter_button_action">Filtrovat</string>
+	<string name="doctors_nearby_filter_reset">Resetovat</string>
+	<string name="doctors_nearby_filter_show_all">Zobrazit vše</string>
+
+	<!-- RequestMedicalRecordActivity -->
+	<string name="request_medical_record_title">Vyžádat záznam</string>
+	<string name="request_medical_record_date_examination">Datum vyšetření</string>
+	<string name="request_medical_record_message">Zpráva</string>
+	<string name="request_medical_record_message_hint">Žádost lékaři…</string>
+	<string name="request_medical_record_send_error">Nepodařilo se poslat žádost</string>
+	<string name="request_medical_record_send_success">Žádost byla úspěšně odeslána</string>
+	<string name="request_medical_record_send">Odeslat</string>
+	<string name="request_medical_record_text">Kontaktujte svého lékaře a vyžádejte si zpětně záznam z vašeho vyšetření.</string>
+	<string name="request_medical_record_doctor_label">Lékař</string>
+	<string name="request_medical_record_doctor_hint">Vyberte lékaře</string>
+	<string name="request_medical_record_no_doctor_error_title">Nemáte přidaného žádného lékaře</string>
+	<string name="request_medical_record_no_doctor_error_content">Pro vyžádání záznamu si musíte nejdříve nějakého přidat.</string>
+
+	<!-- DoctorsNearbyMapFragment-->
+	<string name="doctors_nearby_map_distance_address">%1$s</string>
+	<string name="doctors_nearby_map_search_in_this_area">Hledat v této oblasti</string>
+	<string name="doctors_nearby_map_dialog_play_services_content">K zobrazení doktorů v okolí jsou potřeba služby Google Play, které v zařízení nejspíše nemáte.</string>
+	<string name="doctors_nearby_map_dialog_play_services_get">Nainstalovat</string>
+	<string name="doctors_nearby_map_load_network_error">Nejste připojeni k internetu</string>
+
+	<!--DoctorsNearbyListFragment-->
+	<string name="nearby_doctors_list_empty_title">Žádní lékaři</string>
+	<string name="nearby_doctors_list_empty_subtitle">Pro zadaný výraz jsme nenašli žádné lékaře. Zkuste jiná klíčová slova.</string>
+
+	<!-- FamilyAnamnesisActivity -->
+	<string name="family_anamnesis_title">Rodinná anamnéza</string>
+	<string name="family_anamnesis_other_empty">Nevyplněno</string>
+	<string name="family_anamnesis_section_empty">Bez potíží</string>
+
+	<!-- FamilyAnamnesisEditActivity -->
+
+	<string name="family_anamnesis_edit_relationship">Rodinná příslušnost</string>
+
+	<!-- FamilyAnamnesisMemberActivity -->
+	<string name="family_anamnesis_member_other_category">Jiné problémy</string>
+	<string name="family_anamnesis_member_error_update">Změna rodinné anamnézy se nezdařila</string>
+	<string name="family_anamnesis_member_delete_confirm">Opravdu chcete smazat tohoto člena rodiny?</string>
+	<string name="family_anamnesis_member_error_delete">Smazání rodinné anamnézy se nezdařilo</string>
+	<string name="family_anamnesis_member_description">Vyberte všechny problémy, které se týkají tohoto člena rodiny.</string>
+
+	<!-- ExaminationsActivity -->
+	<string name="examinations_title">Vyšetření</string>
+	<string name="examinations_empty_title">Žádná vyšetření</string>
+	<string name="examinations_empty_subtitle">Zde se objeví vyšetření, která přidá váš lékař.</string>
+	<string name="examination_type_outpatient_examination">Ambulantní vyšetření</string>
+	<string name="examination_type_hospitalization">Hospitalizace</string>
+	<string name="examination_type_layoff_report">Propouštěcí zpráva</string>
+	<string name="examination_type_other">Jiné</string>
+
+	<!-- ExaminationDetailActivity -->
+	<string name="examination_detail_title">Detail vyšetření</string>
+	<string name="examination_detail_type_label">Typ vyšetření</string>
+	<string name="examination_detail_date_label">Datum</string>
+	<string name="examination_detail_doctor">Lékař</string>
+	<string name="examination_detail_main_diagnosis">Hlavní diagnóza</string>
+	<string name="examination_detail_secondary_diagnosis">Vedlejší diagnóza</string>
+	<string name="examination_detail_empty_value">Nezadáno</string>
+	<string name="examination_detail_medication_label">Medikace</string>
+	<string name="examination_detail_attachment">Přílohy</string>
+	<string name="examination_detail_note_label">Poznámka</string>
+	<string name="examination_detail_delete_error">Nepodařilo se smazat vyšetření</string>
+	<string name="examination_detail_medication_attachment_empty">Bez záznamu</string>
+
+	<!-- DocumentationActivity -->
+	<string name="documentation_title">Dokumentace</string>
+	<string name="documenation_empty_title">Žádné dokumentace</string>
+	<string name="documentation_empty_subtitle">Zde se objeví dokumentace, které přidá váš lékař. Nebo je můžete přidat sami.</string>
+	<string name="documentation_delete_error">Nepodařilo se smazat dokument</string>
+
+	<!-- DocumentationDetailActivity -->
+	<string name="documentation_detail_title">Detail dokumentace</string>
+	<string name="documentation_detail_share">Sdílet</string>
+	<string name="documentation_detail_document_title">Název dokumentu</string>
+	<string name="documentation_detail_type">Typ dokumentu</string>
+	<string name="documentation_detail_date">Datum vložení</string>
+	<string name="documentation_detail_note">Poznámka</string>
+	<string name="documentation_detail_document_subtitle">%1$s, %2$s</string>
+	<string name="documentation_detail_note_emoty">Nevyplněno</string>
+
+	<!-- DocumentationEditActivity -->
+	<string name="documentation_edit_title_edit">Upravit dokumentaci</string>
+	<string name="documentation_edit_title_add">Přidat dokumentaci</string>
+	<string name="documentation_edit_title">Název dokumentu</string>
+	<string name="documentation_edit_title_hint">Název dokumentu</string>
+	<string name="documentation_edit_type">Typ dokumentace</string>
+	<string name="documentation_edit_note">Poznámka</string>
+	<string name="documentation_edit_note_hint">Poznámka</string>
+	<string name="documentation_edit_add_attachment">Přidat přílohu</string>
+	<string name="documentation_edit_attachment_subtitle">%1$s, %2$s</string>
+	<string name="documentation_edit_save">Uložit</string>
+	<string name="documentation_edit_delete_confirm">Opravdu chcete smazat tuto dokumentaci?</string>
+	<string name="documentation_edit_network_error">Nepodařilo se odeslat data</string>
+	<string name="documentation_edit_validation_error">Prosím vyplňte všechna povinná pole</string>
+	<string name="documentation_edit_file_missing_error">Prosím vyberte soubor</string>
+	<string name="documentation_edit_file_size_error">Soubor nesmí mít více než 10&#160;MB</string>
+	<string name="documentation_edit_file_extension_error">Nepodporovaný formát souboru. Zvolte JPG nebo PNG.</string>
+	<string name="documentation_edit_file_support_pdf">PDF</string>
+	<string name="documentation_edit_file_support_doc">DOC</string>
+
+	<!-- HealthCareReportActivity -->
+	<string name="health_care_report_title">Vyúčtování</string>
+	<string name="health_care_report_request">Vyžádat vyúčtování</string>
+	<string name="health_care_report_request_description">Vyžádejte si vyúčtování vykázané péče od vaší pojišťovny. O celý proces se postaráme za vás.</string>
+	<string name="health_care_report_request_loading">Odesílám žádost o vyúčtování</string>
+	<string name="health_care_report_request_error">Nepodařilo se odeslat vyúčtování</string>
+	<string name="health_care_report_already_requested">Vyúčtování vyžádáno %s</string>
+	<string name="health_care_report_already_requested_description">Vaši žádost o vyúčtování jsme přijali. Jakmile bude vyúčtování připraveno, budeme vás notifikovat  e-mailem.</string>
+	<string name="health_care_report_period_from_to">Od %1$s do %2$s</string>
+	<string name="health_care_report_history">Historie vyúčtování</string>
+
+	<!-- LaboratoryReportsActivity -->
+	<string name="laboratory_reports_title">Laboratorní testy</string>
+	<string name="laboratory_reports_empty_title">Žádné výsledky</string>
+	<string name="laboratory_reports_empty_description">Zde se objeví výsledky vašich laboratorních testů, které přidá váš lékař.</string>
+
+	<!-- LaboratoryReportDetailsActivity -->
+	<string name="laboratory_report_details_title">Detail výsledku</string>
+	<string name="laboratory_report_details_date">Datum vložení</string>
+	<string name="laboratory_report_details_doctor">Lékař</string>
+	<string name="laboratory_report_details_results">Výsledky</string>
+	<string name="laboratory_report_details_norm_inside">v normě</string>
+	<string name="laboratory_report_details_norm_lower">pod normou</string>
+	<string name="laboratory_report_details_norm_higher">nad normou</string>
+
+	<!-- VaccinationActivity -->
+	<string name="vaccination_title">Očkování</string>
+	<string name="vaccination_empty_title">Žádná očkování</string>
+	<string name="vaccination_empty_subtitle">Zde se objeví očkování, které přidá váš lékař. Nebo je můžete přidat sami.</string>
+	<string name="vaccination_delete_error">Nepodařilo se smazat očkování</string>
+	<string name="vaccination_description">Vakcína %1$s (%2$s. dávka)</string>
+
+	<!-- VaccinationDetailActivity -->
+	<string name="vaccination_detail_title">Detail očkování</string>
+	<string name="vaccination_detail_type">Typ nemoci</string>
+	<string name="vaccination_detail_date">Datum</string>
+	<string name="vaccination_detail_dose_sequence">Pořadí dávky</string>
+	<string name="vaccination_detail_dose_sequence_format">%s. dávka</string>
+
+	<!-- VaccinationSearchActivity -->
+	<string name="vaccination_search_vaccine_name_hint">Název nemoci nebo vakcíny…</string>
+	<string name="vaccination_search_empty_title">Žádné výsledky</string>
+	<string name="vaccination_search_empty_subtitle">Pro zadaný výraz jsme nic nenašli.  Zkuste vyhledat jinou látku.</string>
+
+	<!-- VaccinationEditActivity -->
+	<string name="vaccination_edit_title_add">Přidat očkování</string>
+	<string name="vaccination_edit_title_edit">Upravit očkování</string>
+	<string name="vaccination_edit_network_error">Nepodařilo se odeslat data</string>
+	<string name="vaccination_edit_save">Uložit</string>
+	<string name="vaccination_edit_diseases">Typ nemoci</string>
+	<string name="vaccination_edit_date">Datum</string>
+	<string name="vaccination_edit_dose_sequence">Pořadí dávky</string>
+	<string name="vaccination_edit_delete">Smazat</string>
+	<string name="vaccination_edit_delete_confirm">Opravdu chcete smazat toto očkování?</string>
+
+	<!-- AssistanceActivity -->
+	<string name="assistance_title">Poradna - zeptejte se</string>
+	<string name="assistance_description">Do 48 hodin dostanete e-mail s odpovědí od lékaře  podle zvolené specializace.</string>
+	<string name="assistance_doctor_specialization">Specializace lékaře</string>
+	<string name="assistance_doctor_specialization_hint">Zvolte specializaci</string>
+	<string name="assistance_question_relevance">Dotaz se týká</string>
+	<string name="assistance_question_title">Dotaz na zdravotní obtíže</string>
+	<string name="assistance_question_hint">Napište svůj dotaz…</string>
+	<string name="assistance_send">Odeslat</string>
+	<string name="assistance_send_error">Požadavek se nepodařilo odeslat. Zkontrolujte prosím vaše internetové připojení a zkuste to znovu.</string>
+	<string name="assistance_missing_specialization">Prosím uveďte specializaci, ke které se váš dotaz vztahuje</string>
+	<string name="assistance_missing_question">Vyplňte prosím znění vaší otázky</string>
+	<string name="assistance_success_dialog_title">Vaši zprávu jsme přijali</string>
+	<string name="assistance_success_dialog_content">Vaši zprávu jsme přijali a nyní vybíráme vhodného odborníka, který se Vám bude věnovat. Odpověď Vám doručí specialista do e-mailu.</string>
+	<string name="assistance_success_dialog_button">Rozumím</string>
+
+	<!-- PreventionActivity -->
+	<string name="prevention_title">Preventivní prohlídky</string>
+	<string name="prevention_tab_available">Dostupné</string>
+	<string name="prevention_tab_history">Historie</string>
+	<string name="prevention_tab_programs">Programy</string>
+	<string name="prevention_available_empty_title">Žádné dostupné prohlídky</string>
+	<string name="prevention_available_empty_subtitle">Zde se objeví prohlídky, které jsou dostupné.</string>
+	<string name="prevention_history_empty_title">Žádné absolvované prohlídky</string>
+	<string name="prevention_history_empty_subtitle">Zde se objeví prohlídky, které jste absolvovali.</string>
+	<string name="prevention_programs_empty_title">Žádné dostupné programy</string>
+	<string name="prevention_programs_empty_subtitle">Zde se objeví programy, které jsou dostupné.</string>
+	<string name="prevention_programs_company_hint">Pojišťovna</string>
+	<string name="prevention_programs_description">U vaší pojišťovny si můžete vyžádat více informací o&#160;těchto preventivních programech:</string>
+	<string name="prevention_programs_item_title">%1$s (%2$s)</string>
+	<string name="prevention_examination_list_item_date_planned">Naplánováno na %1$s, %2$s</string>
+	<string name="prevention_examination_list_item_date_available">Dostupná od %s</string>
+
+	<!-- PreventionExaminationDetailActivity -->
+	<string name="prevention_examination_detail_title">Detail prohlídky</string>
+	<string name="prevention_examination_detail_type_inspection">Typ prohlídky</string>
+	<string name="prevention_examination_detail_date_absolved">Datum absolvování</string>
+	<string name="prevention_examination_detail_date_planned_last">Naposledy absolvováno</string>
+	<string name="prevention_examination_detail_date_planned_on">Naplánováno na</string>
+	<string name="prevention_examination_detail_date_planned_tmp">%1$s, %2$s</string>
+	<string name="prevention_examination_detail_date_available">Dostupná od</string>
+	<string name="prevention_examination_detail_doctor">Lékař</string>
+	<string name="prevention_examination_detail_reminder">Upomínka</string>
+	<string name="prevention_examination_detail_empty">Nezadáno</string>
+
+	<!-- PreventionExaminationAddActivity -->
+	<string name="prevention_examination_add_title">Přidat prohlídku</string>
+	<string name="prevention_examination_edit_title">Upravit prohlídku</string>
+	<string name="prevention_examination_schedule_title">Naplánovat prohlídku</string>
+	<string name="prevention_examination_add_add">Přidat</string>
+	<string name="prevention_examination_add_save">Uložit</string>
+	<string name="prevention_examination_add_delete_confirmation">Opravdu chcete smazat tuto prohlídku?</string>
+	<string name="prevention_examination_add_type">Typ prohlídky</string>
+	<string name="prevention_examination_add_doctor">Jméno lékaře</string>
+	<string name="prevention_examination_add_date_hint">Datum</string>
+	<string name="prevention_examination_add_time_hint">Čas</string>
+	<string name="prevention_examination_add_date_absolved">Datum absolvování</string>
+	<string name="prevention_examination_add_date_planned">Datum prohlídky</string>
+	<string name="prevention_examination_add_time_planned">Čas prohlídky</string>
+	<string name="prevention_examination_add_reminder">Upomínka</string>
+	<string name="prevention_examination_add_want_reminder">Chci dostat upomínku</string>
+	<string name="prevention_examination_edit_error">Prohlídku se nepodařilo změnit</string>
+	<string name="prevention_examination_add_error">Prohlídku se nepodařilo uložit</string>
+	<string name="prevention_examination_delete_error">Prohlídku se nepodařilo smazat</string>
+	<string name="prevention_examination_planned_date_error">Plánovaná prohlídka nesmí mít dnešní datum</string>
+	<string name="prevention_examination_prevention_error_content">Nemáte žádné dostupné preventivní prohlídky</string>
+
+	<!-- PreventionProgramsDetailActivity -->
+	<string name="prevention_programs_detail_title">Detail programu</string>
+	<string name="prevention_programs_detail_type">Typ programu</string>
+	<string name="prevention_programs_detail_program">Program</string>
+	<string name="prevention_programs_detail_condition">Podmínka</string>
+	<string name="prevention_programs_detail_contribution">Příspěvek</string>
+	<string name="prevention_programs_detail_availability">Interval dostupnosti</string>
+	<string name="prevention_programs_detail_age">Věková skupina</string>
+	<string name="prevention_programs_detail_empty">Nevyplněno</string>
+
+	<!-- LauncherActivity -->
+	<string name="launcher_onboarding_1_title">Všechny vaše zdravotní\nzáznamy na jednom místě</string>
+	<string name="launcher_onboarding_1_description">Zdravel je vaše elektronická zdravotní knížka.\nMějte přehled o vašem zdraví.</string>
+	<string name="launcher_onboarding_2_title">Najděte specialisty\nve vašem okolí</string>
+	<string name="launcher_onboarding_2_description">Hledejte v databázi více než\n20 000 specialistů po celé ČR</string>
+	<string name="launcher_onboarding_3_title">Komunikujte s vaším lékařem\nrychleji a pohodlněji</string>
+	<string name="launcher_onboarding_3_description">Získáte odpovědi na vaše dotazy,\nať už jste kdekoliv.</string>
+	<string name="launcher_continue">Pokračovat</string>
+	<string name="launcher_emulator_dialog_title">Litujeme</string>
+	<string name="launcher_emulator_dialog_content">Aplikace nelze v emulátoru spustit.</string>
+	<string name="launcher_emulator_dialog_close">Ukončit</string>
+	<string name="launcher_root_dialog_title">Upozornění</string>
+	<string name="launcher_root_dialog_content">Spouštíte aplikaci s upraveným OS telefonu (root). Vaše data v aplikaci Zdravel proto nemusí být v bezpečí.</string>
+	<string name="launcher_root_dialog_ok">Pokračovat</string>
+	<string name="launcher_root_dialog_close">Ukončit</string>
+
+	<!-- TravelInsuranceActivity -->
+	<string name="travel_insurance_title">Na cesty</string>
+	<string name="travel_insurance_subtitle">Výhodné cestovní pojištění ČSOB</string>
+	<string name="travel_insurance_text">Získejte cestovní pojištění ČSOB\n se slevou 10% pro klienty ZDRAVEL.</string>
+	<string name="travel_insurance_button">Sjednat pojištění u ČSOB pojišťovny</string>
+
+	<!-- Notifications -->
+	<string name="notification_medication_reminder_text">Nezapomeňte si vzít lék</string>
+	<string name="notification_medication_reminder_text_with_time">Nezapomeňte si vzít lék v %s</string>
+	<string name="notification_download_progress">Právě probíhá stahování</string>
+	<string name="notification_download_error">Stahování bylo neúspěšné</string>
+	<string name="notification_download_done">Stahování dokončeno</string>
+	<string name="notification_download_waiting">Čekání na stažení souboru</string>
+	<string name="timeline_more">Více</string>
+
+	<!--MainActivity-->
+	<string name="tab_home_content_description">Domů</string>
+	<string name="tab_timeline_content_description">Časová osa</string>
+	<string name="tab_nearby_doctors_content_decription">Lékaři v okolí</string>
+	<string name="tab_conversations_content_decription">Konverzace</string>
+	<string name="tab_profile_content_description">Profil</string>
+
+	<!--Calendar-->
+	<string name="monday">Po</string>
+	<string name="tuesday">Út</string>
+	<string name="wednesday">St</string>
+	<string name="thursday">Čt</string>
+	<string name="friday">Pá</string>
+	<string name="saturday">So</string>
+	<string name="sunday">Ne</string>
+
+</resources>
+
