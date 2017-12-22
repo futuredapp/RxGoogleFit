@@ -11,8 +11,6 @@ import dagger.Subcomponent
 interface MainActivityComponent : BaseActivityComponent<MainActivity> {
 
 	@Module
-	class MainActivityModule internal constructor(
-			activity: MainActivity
-	) : BaseActivityModule<MainActivity>(activity) {
-	}
+	class MainActivityModule internal constructor(activity: MainActivity) :
+			BaseActivityModule<MainActivity>(activity)
 }

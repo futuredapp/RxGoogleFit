@@ -1,7 +1,7 @@
-package com.funtasty.fittester.rxFitTasty.history
+package com.funtasty.rxfittasty.history
 
 import android.support.annotation.NonNull
-import com.funtasty.fittester.rxFitTasty.base.RxFitTaste
+import com.funtasty.rxfittasty.base.RxFitTaste
 import com.google.android.gms.fitness.data.DataSet
 import com.google.android.gms.fitness.request.DataDeleteRequest
 import com.google.android.gms.fitness.request.DataReadRequest
@@ -27,7 +27,7 @@ class HistoryApi(private val rxFitTaste: RxFitTaste) {
 		return Single.create(HistoryInsertSingle(rxFitTaste, insertDataSet))
 	}
 
-	fun revokeAccess(rxFitTaste: RxFitTaste): Single<Void> {
+	fun revokeAccess(): Single<Void> {
 		return Single.create(RevokeAccessSingle(rxFitTaste))
 	}
 }

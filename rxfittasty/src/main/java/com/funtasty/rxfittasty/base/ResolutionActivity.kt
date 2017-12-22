@@ -1,10 +1,10 @@
-package com.funtasty.fittester.rxFitTasty.base
+package com.funtasty.rxfittasty.base
 
 import android.app.Activity
 import android.content.Intent
 import android.content.IntentSender
 import android.os.Bundle
-import com.funtasty.fittester.rxFitTasty.util.ParcalablePair
+import com.funtasty.rxfittasty.util.ParcalablePair
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.fitness.FitnessOptions
@@ -22,7 +22,6 @@ class ResolutionActivity : Activity() {
 	}
 
 	private val REQUEST_CODE_RESOLUTION = 123
-
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

@@ -1,4 +1,4 @@
-package com.funtasty.fittester.rxFitTasty.util
+package com.funtasty.rxfittasty.util
 
 import android.os.Parcel
 import android.os.Parcelable

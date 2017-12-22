@@ -17,7 +17,6 @@ import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.fitness.FitnessOptions
 import com.google.android.gms.fitness.data.DataType
 import com.google.android.gms.fitness.data.HealthDataTypes
-import com.patloew.rxfit.GoogleAPIConnectionException
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import javax.inject.Inject
@@ -26,7 +25,6 @@ import javax.inject.Inject
 class MainActivity : BaseActivity(), MainView {
 
 	@Inject lateinit var presenter: MainPresenter
-	private lateinit var apiClient: GoogleApiClient
 
 	private val PERMS_REQUEST_CODE = 2121
 	private val RESOLUTION = 2122
@@ -51,24 +49,11 @@ class MainActivity : BaseActivity(), MainView {
 		btnRevokeAccess.setOnClickListener {
 			revokeAccess()
 		}
-//		val request: DataReadRequest
-//		val result = Fitness.getHistoryClient(this, GoogleSignIn.getLastSignedInAccount(this))
-//				.readData(request)
 	}
 
 	private fun revokeAccess() {
 
-//		Fitness.getConfigClient(this, GoogleSignIn.getLastSignedInAccount(this))
-//				.disableFit()
-		signInClient.revokeAccess()
-				.addOnCompleteListener {
-					Timber.d("accessRevoked")
-					isPermsGranted()
-				}
-				.addOnFailureListener {
-					Timber.e("accessnot Revoked ${it.message}")
-
-				}
+		presenter.revokeAccess()
 		isPermsGranted()
 	}
 
@@ -77,7 +62,7 @@ class MainActivity : BaseActivity(), MainView {
 		val bodyPerm = ContextCompat.checkSelfPermission(this, Manifest.permission.BODY_SENSORS) == PackageManager.PERMISSION_GRANTED
 		val locationPerm = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
 		if (bodyPerm && locationPerm) {
-			presenter.onGetData(true, this)
+			presenter.onGetData(true)
 		} else {
 			getPerms()
 		}
@@ -109,10 +94,6 @@ class MainActivity : BaseActivity(), MainView {
 		ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.BODY_SENSORS, Manifest.permission.ACCESS_FINE_LOCATION), PERMS_REQUEST_CODE)
 	}
 
-	override fun handleResolution(exception: GoogleAPIConnectionException) {
-		exception.connectionResult?.startResolutionForResult(this, RESOLUTION)
-	}
-
 	override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
@@ -120,7 +101,7 @@ class MainActivity : BaseActivity(), MainView {
 			PERMS_REQUEST_CODE -> {
 				if (grantResults.isNotEmpty()
 						&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-					presenter.onGetData(true, this)
+					presenter.onGetData(true)
 				}
 			}
 		}
@@ -132,12 +113,12 @@ class MainActivity : BaseActivity(), MainView {
 		when (requestCode) {
 			RESOLUTION -> {
 				if (resultCode == Activity.RESULT_OK) {
-					presenter.onGetData(true, this)
+					presenter.onGetData(true)
 				}
 			}
 			REQUEST_OAUTH_REQUEST_CODE -> {
 				if (resultCode == Activity.RESULT_OK) {
-					presenter.onGetData(true, this)
+					presenter.onGetData(true)
 				}
 			}
 		}

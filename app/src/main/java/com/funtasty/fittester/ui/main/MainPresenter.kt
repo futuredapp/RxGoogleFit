@@ -1,12 +1,10 @@
 package com.funtasty.fittester.ui.main
 
-import android.content.Context
 import com.funtasty.fittester.data.store.FitnessStore
-import com.funtasty.fittester.rxFitTasty.base.RxFitTaste
-import com.funtasty.fittester.rxFitTasty.history.HistoryApi
-import com.funtasty.fittester.rxFitTasty.util.ParcalablePair
+import com.funtasty.rxfittasty.base.RxFitTaste
+import com.funtasty.rxfittasty.util.ParcalablePair
 import com.google.android.gms.fitness.FitnessOptions
-import com.google.android.gms.fitness.data.DataType
+import com.google.android.gms.fitness.data.HealthDataTypes
 import com.thefuntasty.taste.injection.annotation.scope.PerScreen
 import com.thefuntasty.taste.mvp.BasePresenter
 import rx.android.schedulers.AndroidSchedulers
@@ -18,6 +16,7 @@ import javax.inject.Inject
 class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 
 	@Inject lateinit var fitnessStore: FitnessStore
+	@Inject lateinit var rxFitTaste: RxFitTaste
 
 	override fun attachView(mvpView: MainView?) {
 		super.attachView(mvpView)
@@ -30,24 +29,19 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 		Timber.d("detachView")
 	}
 
-	fun onGetData(accessGranted: Boolean, context: Context) {
+	fun onGetData(accessGranted: Boolean) {
 		if (accessGranted) {
-			getData(context)
+			getData()
 		} else {
 			view.getPerms()
 		}
 	}
 
-	private fun getData(context: Context) {
-//		fitnessStore.bloodGlucose
+	private fun getData() {
 
 		val types = ArrayList<ParcalablePair>()
-		types.add(ParcalablePair(DataType.TYPE_HEIGHT, FitnessOptions.ACCESS_WRITE))
-		val rxFitTaste = RxFitTaste(context, types)
-		val history = HistoryApi(rxFitTaste)
-		history.read(fitnessStore.heightRequest)
-//		val historySingle = Single.create(HistoryReadSingle(rxFitTaste, fitnessStore.heightRequest))
-//		historySingle
+		types.add(ParcalablePair(HealthDataTypes.TYPE_BLOOD_GLUCOSE, FitnessOptions.ACCESS_READ))
+		rxFitTaste.history.read(fitnessStore.bloodGlucoseRequest)
 				.observeOn(AndroidSchedulers.mainThread())
 				.subscribeOn(Schedulers.io())
 				.subscribe({
@@ -56,20 +50,16 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 				}, {
 					Timber.e(it.message)
 				})
-//				.subscribe { result: DataReadResult?, t2: Throwable? ->
-//					result?.let {
-//						Timber.d(it.status.toString())
-//						view.setStatusText(it.status.toString())
-//					}
-//
-//					t2?.let {
-//						Timber.e(it.message)
-//						if (it is GoogleAPIConnectionException) {
-//							if (it.connectionResult.hasResolution()) {
-//								view.handleResolution(it)
-//							}
-//						}
-//					}
-//				}
+	}
+
+	fun revokeAccess() {
+		rxFitTaste.history.revokeAccess()
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribeOn(Schedulers.io())
+				.subscribe({
+					Timber.d("revoked")
+				}, {
+					Timber.e(it.message)
+				})
 	}
 }

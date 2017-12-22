@@ -1,13 +1,16 @@
-package com.funtasty.fittester.rxFitTasty.history
+package com.funtasty.rxfittasty.history
 
-import com.funtasty.fittester.rxFitTasty.base.BaseSingle
-import com.funtasty.fittester.rxFitTasty.base.RxFitTaste
+import com.funtasty.rxfittasty.base.BaseSingle
+import com.funtasty.rxfittasty.base.RxFitTaste
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.request.DataUpdateRequest
 import rx.SingleSubscriber
 
 class HistoryUpdateSingle(rxFit: RxFitTaste, private val dataUpdateRequest: DataUpdateRequest) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
-		rxFitTaste.history.updateData(dataUpdateRequest)
+		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
+				.updateData(dataUpdateRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
 						subscriber.onSuccess(it.result)

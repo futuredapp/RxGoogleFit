@@ -2,7 +2,7 @@ package com.funtasty.fittester.data.store
 
 import com.funtasty.fittester.data.model.ui.MeasurementType
 import com.funtasty.fittester.tools.Constant
-import com.google.android.gms.common.api.Status
+import com.funtasty.rxfittasty.base.RxFitTaste
 import com.google.android.gms.fitness.data.DataSet
 import com.google.android.gms.fitness.data.DataSource
 import com.google.android.gms.fitness.data.DataType
@@ -10,11 +10,9 @@ import com.google.android.gms.fitness.data.HealthDataTypes
 import com.google.android.gms.fitness.request.DataDeleteRequest
 import com.google.android.gms.fitness.request.DataReadRequest
 import com.google.android.gms.fitness.request.DataUpdateRequest
-import com.google.android.gms.fitness.result.DataReadResult
-import com.patloew.rxfit.RxFit
-import io.reactivex.Completable
-import io.reactivex.Single
-import io.reactivex.schedulers.Schedulers
+import com.google.android.gms.fitness.result.DataReadResponse
+import rx.Single
+import rx.schedulers.Schedulers
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.ZoneOffset
@@ -23,7 +21,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class FitnessStore @Inject constructor(private var rxFit: RxFit) {
+class FitnessStore @Inject constructor(var rxFit: RxFitTaste) {
 
 //	val permission: Observable<Status>
 //		get() = checkFitConnection().andThen<Any>(
@@ -56,19 +54,19 @@ class FitnessStore @Inject constructor(private var rxFit: RxFit) {
 //				}
 //		)
 
-	val bloodPressure: Single<DataReadResult>
+	val bloodPressure: Single<DataReadResponse>
 		get() = readHistory(bloodPressureRequest)
 
-	val bloodGlucose: Single<DataReadResult>
+	val bloodGlucose: Single<DataReadResponse>
 		get() = readHistory(bloodGlucoseRequest)
 
-	val fitHeight: Single<DataReadResult>
+	val fitHeight: Single<DataReadResponse>
 		get() = readHistory(heightRequest)
 
-	val fitWeight: Single<DataReadResult>
+	val fitWeight: Single<DataReadResponse>
 		get() = readHistory(weightRequest)
 
-	val fitHeartRate: Single<DataReadResult>
+	val fitHeartRate: Single<DataReadResponse>
 		get() = readHistory(heartRateRequest)
 
 	val bloodGlucoseRequest: DataReadRequest
@@ -104,43 +102,43 @@ class FitnessStore @Inject constructor(private var rxFit: RxFit) {
 				.setTimeRange(1, now(), TimeUnit.MILLISECONDS)
 				.build()
 
-	fun revokeFitAccess(): Single<Status> {
-		return rxFit.config().disableFit()
+	fun revokeFitAccess(): Single<Void> {
+		return rxFit.history.revokeAccess()
 				.observeOn(Schedulers.io())
 	}
 
 
-	fun checkFitConnection(): Completable {
-		return rxFit.checkConnection()
-		//				.observeOn(Schedulers.io());
-	}
+//	fun checkFitConnection(): Completable {
+//		return rxFit.checkConnection()
+	//				.observeOn(Schedulers.io());
+//	}
 
-	fun saveWeight(weight: Float?, date: Long): Single<Status> {
+	fun saveWeight(weight: Float?, date: Long): Single<Void> {
 		return insertHistoryDataSet(getWeightDataSet(weight, date))
 	}
 
-	fun saveHeight(height: Float?, date: Long): Single<Status> {
+	fun saveHeight(height: Float?, date: Long): Single<Void> {
 		return insertHistoryDataSet(getHeightDataSet(height, date))
 	}
 
-	fun updateHeight(height: Float?, date: Long): Single<Status> {
+	fun updateHeight(height: Float?, date: Long): Single<Void> {
 		return updateHistoryDataSet(getHeightUpdateRequest(height, date))
 	}
 
-	fun updateWeight(weight: Float?, date: Long): Single<Status> {
+	fun updateWeight(weight: Float?, date: Long): Single<Void> {
 		return updateHistoryDataSet(getWeightUpdateRequest(weight, date))
 	}
 
-	fun deleteHeight(date: Long): Single<Status> {
+	fun deleteHeight(date: Long): Single<Void> {
 		return deleteHistoryData(getDataDeleteRequest(DataType.TYPE_HEIGHT, date))
 	}
 
-	fun deleteWeight(date: Long): Single<Status> {
+	fun deleteWeight(date: Long): Single<Void> {
 		return deleteHistoryData(getDataDeleteRequest(DataType.TYPE_WEIGHT, date))
 	}
 
-	private fun deleteHistoryData(request: DataDeleteRequest): Single<Status> {
-		return rxFit.history().delete(request)
+	private fun deleteHistoryData(request: DataDeleteRequest): Single<Void> {
+		return rxFit.history.delete(request)
 				.observeOn(Schedulers.io())
 	}
 
@@ -166,8 +164,8 @@ class FitnessStore @Inject constructor(private var rxFit: RxFit) {
 				.build()
 	}
 
-	private fun readHistory(readRequest: DataReadRequest): Single<DataReadResult> {
-		return rxFit.history().read(readRequest)
+	private fun readHistory(readRequest: DataReadRequest): Single<DataReadResponse> {
+		return rxFit.history.read(readRequest)
 				.observeOn(Schedulers.io())
 	}
 
@@ -176,13 +174,13 @@ class FitnessStore @Inject constructor(private var rxFit: RxFit) {
 		//		readResult.getStatus().getResolution()
 	}
 
-	private fun insertHistoryDataSet(dataSet: DataSet): Single<Status> {
-		return rxFit.history().insert(dataSet)
+	private fun insertHistoryDataSet(dataSet: DataSet): Single<Void> {
+		return rxFit.history.insert(dataSet)
 				.observeOn(Schedulers.io())
 	}
 
-	private fun updateHistoryDataSet(dataUpdateRequest: DataUpdateRequest): Single<Status> {
-		return rxFit.history().update(dataUpdateRequest)
+	private fun updateHistoryDataSet(dataUpdateRequest: DataUpdateRequest): Single<Void> {
+		return rxFit.history.update(dataUpdateRequest)
 				.observeOn(Schedulers.io())
 	}
 
@@ -214,7 +212,7 @@ class FitnessStore @Inject constructor(private var rxFit: RxFit) {
 		return LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 	}
 
-	fun updateFitMeasurement(measurementType: MeasurementType, value: Double, value2: Double?, localDateTime: LocalDateTime, unit: String): Single<Status> {
+	fun updateFitMeasurement(measurementType: MeasurementType, value: Double, value2: Double?, localDateTime: LocalDateTime, unit: String): Single<Void> {
 
 		val date = localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 
@@ -229,17 +227,17 @@ class FitnessStore @Inject constructor(private var rxFit: RxFit) {
 				updateHeight(height, date)
 			}
 			MeasurementType.WEIGHT -> updateWeight(value.toFloat(), date)
-			else -> Single.never()
+			else -> Single.just(null)
 		}
 	}
 
-	fun deleteFromFit(measurementType: MeasurementType, localDateTime: LocalDateTime): Single<Status> {
+	fun deleteFromFit(measurementType: MeasurementType, localDateTime: LocalDateTime): Single<Void> {
 		val date = localDateTime.atZone(ZoneOffset.systemDefault()).toInstant().toEpochMilli()
 
 		return when (measurementType) {
 			MeasurementType.HEIGHT -> deleteHeight(date)
 			MeasurementType.WEIGHT -> deleteWeight(date)
-			else -> Single.never()
+			else -> Single.just(null)
 		}//			case HEART_RATE:
 		//				return deleteHeartrate(date);
 		//			case BLOOD_PRESSURE:
@@ -249,14 +247,14 @@ class FitnessStore @Inject constructor(private var rxFit: RxFit) {
 	}
 
 	private fun deleteBloodSugar(time: Long): Single<Void> {
-		return Single.never()
+		return Single.just(null)
 	}
 
 	private fun deleteBloodPressure(time: Long): Single<Void> {
-		return Single.never()
+		return Single.just(null)
 	}
 
 	private fun deleteHeartrate(time: Long): Single<Void> {
-		return Single.never()
+		return Single.just(null)
 	}
 }

@@ -1,14 +1,13 @@
-package com.funtasty.fittester.rxFitTasty.history
+package com.funtasty.rxfittasty.history
 
-import com.funtasty.fittester.rxFitTasty.base.BaseSingle
-import com.funtasty.fittester.rxFitTasty.base.RxFitTaste
+import com.funtasty.rxfittasty.base.BaseSingle
+import com.funtasty.rxfittasty.base.RxFitTaste
 import rx.SingleSubscriber
-import timber.log.Timber
 
 class RevokeAccessSingle(rxFit: RxFitTaste) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
 		val signInClient = createGoogleSignInClient(rxFitTaste.getFitnessOptions())
-		signInClient.revokeAccess()
+		signInClient.signOut() // TODO signout or revoke?
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
 						subscriber.onSuccess(it.result)

@@ -1,4 +1,4 @@
-package com.funtasty.fittester.rxFitTasty.base
+package com.funtasty.rxfittasty.base
 
 import android.app.Activity
 import android.content.Intent
@@ -12,7 +12,7 @@ abstract class BaseSingle<T>(val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTast
 
 	override fun call(t: SingleSubscriber<in T>) {
 		subscriptionInfoMap.add(t)
-		val googleSignInClient = createGoogleSignInClient(rxFitTaste.getFitnessOptions())
+		createGoogleSignInClient(rxFitTaste.getFitnessOptions())
 		if (!GoogleSignIn.hasPermissions(GoogleSignIn.getLastSignedInAccount(rxFitTaste.context), rxFitTaste.getFitnessOptions())) {
 			resolvePermissions()
 		} else {
@@ -23,8 +23,7 @@ abstract class BaseSingle<T>(val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTast
 	private fun resolvePermissions() {
 		observableSet.add(this)
 
-
-		if(!ResolutionActivity.isResolutionShown()) {
+		if (!ResolutionActivity.isResolutionShown()) {
 			val resolutionIntent = Intent(context, ResolutionActivity::class.java)
 					.apply {
 						putParcelableArrayListExtra(ResolutionActivity.DATA_TYPES_PAIRS, rxFitTaste.fitnessDataTypesOptions)

@@ -1,4 +1,4 @@
-package com.funtasty.fittester.rxFitTasty.base
+package com.funtasty.rxfittasty.base
 
 import android.content.Context
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -8,7 +8,6 @@ import com.google.android.gms.fitness.FitnessOptions
 import java.util.*
 
 abstract class BaseRxTaste(val context: Context) {
-
 
 	companion object {
 		val observableSet: MutableSet<BaseRxTaste> = HashSet()
@@ -21,9 +20,7 @@ abstract class BaseRxTaste(val context: Context) {
 		}
 	}
 
-
 	fun createGoogleSignInClient(fitnessOptions: FitnessOptions): GoogleSignInClient = GoogleSignIn.getClient(context, getSignInOptions(fitnessOptions))
-
 
 	private fun getSignInOptions(fitnessOptions: FitnessOptions): GoogleSignInOptions {
 		return GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
