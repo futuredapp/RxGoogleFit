@@ -1,1 +1,1 @@
-include ':app', ':rxfittasty'
+include ':example', ':rxfittasty'

@@ -13,7 +13,6 @@ import com.funtasty.fittester.ui.base.BaseActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.fitness.FitnessOptions
 import com.google.android.gms.fitness.data.DataType
 import com.google.android.gms.fitness.data.HealthDataTypes
