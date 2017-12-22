@@ -7,13 +7,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
 
     defaultConfig {
         applicationId "com.funtasty.fittester"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,6 +34,24 @@ android {
         exclude 'META-INF/rxjava.properties'
         exclude 'META-INF/services/com.google.protobuf.GeneratedExtensionRegistryLoader'
     }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+detekt {
+    version = "1.0.0.RC5-5"
+    profile("main") {
+        config = "$project.projectDir/detekt.yml"
+        input = "$project.projectDir/src/main"
+    }
+}
+
+ktlint {
+    version = "0.14.0"
+    ignoreFailures = false
+    android = true
 }
 
 dependencies {
@@ -43,7 +61,7 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.0.0'
 
     // Google fit
     implementation "com.google.android.gms:play-services-fitness:$PLAY_SERVICES"
@@ -61,6 +79,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile project(':rxfittasty')
+    implementation project(':rxfittasty')
 
 }
