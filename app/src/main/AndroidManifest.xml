@@ -21,7 +21,10 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-		<activity android:name=".rxFitTasty.base.ResolutionActivity"/>
+		<activity
+			android:name=".rxFitTasty.base.ResolutionActivity"
+			android:launchMode="singleTask"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 	</application>
 
 </manifest>

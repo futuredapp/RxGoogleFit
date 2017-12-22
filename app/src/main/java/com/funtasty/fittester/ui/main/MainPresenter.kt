@@ -3,15 +3,12 @@ package com.funtasty.fittester.ui.main
 import android.content.Context
 import com.funtasty.fittester.data.store.FitnessStore
 import com.funtasty.fittester.rxFitTasty.base.RxFitTaste
-import com.funtasty.fittester.rxFitTasty.history.HistorySingle
+import com.funtasty.fittester.rxFitTasty.history.HistoryApi
 import com.funtasty.fittester.rxFitTasty.util.ParcalablePair
 import com.google.android.gms.fitness.FitnessOptions
 import com.google.android.gms.fitness.data.DataType
-import com.google.android.gms.fitness.result.DataReadResult
-import com.patloew.rxfit.GoogleAPIConnectionException
 import com.thefuntasty.taste.injection.annotation.scope.PerScreen
 import com.thefuntasty.taste.mvp.BasePresenter
-import rx.Single
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import timber.log.Timber
@@ -47,11 +44,13 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 		val types = ArrayList<ParcalablePair>()
 		types.add(ParcalablePair(DataType.TYPE_HEIGHT, FitnessOptions.ACCESS_WRITE))
 		val rxFitTaste = RxFitTaste(context, types)
-		val historySingle = Single.create(HistorySingle(rxFitTaste, fitnessStore.heightRequest))
-		historySingle
+		val history = HistoryApi(rxFitTaste)
+		history.read(fitnessStore.heightRequest)
+//		val historySingle = Single.create(HistoryReadSingle(rxFitTaste, fitnessStore.heightRequest))
+//		historySingle
 				.observeOn(AndroidSchedulers.mainThread())
 				.subscribeOn(Schedulers.io())
-				.subscribe ({
+				.subscribe({
 					Timber.d(it.status.toString())
 					view.setStatusText(it.status.toString())
 				}, {

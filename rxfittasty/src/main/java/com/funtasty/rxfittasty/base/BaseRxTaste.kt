@@ -5,16 +5,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.fitness.FitnessOptions
-import java.util.HashSet
+import java.util.*
 
 abstract class BaseRxTaste(val context: Context) {
-
 
 
 	companion object {
 		val observableSet: MutableSet<BaseRxTaste> = HashSet()
 
-		fun onResolutionResult(resultCode: Int ) {
+		fun onResolutionResult(resultCode: Int) {
 			for (observable in observableSet) {
 				observable.handleResolutionResult(resultCode)
 			}
@@ -34,5 +33,4 @@ abstract class BaseRxTaste(val context: Context) {
 	}
 
 	protected abstract fun handleResolutionResult(resultCode: Int)
-
 }

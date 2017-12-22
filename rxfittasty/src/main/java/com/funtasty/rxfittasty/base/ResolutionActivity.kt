@@ -4,23 +4,25 @@ import android.app.Activity
 import android.content.Intent
 import android.content.IntentSender
 import android.os.Bundle
-import android.os.Parcelable
 import com.funtasty.fittester.rxFitTasty.util.ParcalablePair
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.fitness.FitnessOptions
-import com.google.android.gms.fitness.data.DataType
 
 class ResolutionActivity : Activity() {
 
 	companion object {
 		val DATA_TYPES_PAIRS = "data_types"
+
+		fun isResolutionShown(): Boolean {
+			return resolutionShown
+		}
+
+		private var resolutionShown = false
 	}
 
 	private val REQUEST_CODE_RESOLUTION = 123
 
-	private var resolutionShown = false
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -70,9 +72,5 @@ class ResolutionActivity : Activity() {
 		resolutionShown = false
 		BaseRxTaste.onResolutionResult(resultCode)
 		finish()
-	}
-
-	internal fun isResolutionShown(): Boolean {
-		return resolutionShown
 	}
 }

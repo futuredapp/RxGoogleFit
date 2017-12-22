@@ -6,7 +6,7 @@ import com.google.android.gms.fitness.request.DataReadRequest
 import com.google.android.gms.fitness.result.DataReadResponse
 import rx.SingleSubscriber
 
-class HistorySingle(val rxFit: RxFitTaste, val dataReadRequest: DataReadRequest) : BaseSingle(rxFit) {
+class HistoryReadSingle(rxFit: RxFitTaste, private val dataReadRequest: DataReadRequest) : BaseSingle<DataReadResponse>(rxFit) {
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in DataReadResponse>) {
 		rxFitTaste.history.readData(dataReadRequest)
