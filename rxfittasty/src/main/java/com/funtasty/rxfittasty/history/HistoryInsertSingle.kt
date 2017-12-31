@@ -2,6 +2,8 @@ package com.funtasty.rxfittasty.history
 
 import com.funtasty.rxfittasty.base.BaseSingle
 import com.funtasty.rxfittasty.base.RxFitTaste
+import com.funtasty.rxfittasty.util.onSafeError
+import com.funtasty.rxfittasty.util.onSafeSuccess
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.data.DataSet
@@ -13,13 +15,13 @@ class HistoryInsertSingle(rxFit: RxFitTaste, private val insertDataSet: DataSet)
 				.insertData(insertDataSet)
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
-						subscriber.onSuccess(it.result)
+						subscriber.onSafeSuccess(it.result)
 					} else {
-						subscriber.onError(it.exception)
+						subscriber.onSafeError(it.exception as Throwable)
 					}
 				}
 				.addOnFailureListener {
-					subscriber.onError(it)
+					subscriber.onSafeError(it)
 				}
 	}
 }

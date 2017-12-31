@@ -2,6 +2,8 @@ package com.funtasty.rxfittasty.history
 
 import com.funtasty.rxfittasty.base.BaseSingle
 import com.funtasty.rxfittasty.base.RxFitTaste
+import com.funtasty.rxfittasty.util.onSafeError
+import com.funtasty.rxfittasty.util.onSafeSuccess
 import rx.SingleSubscriber
 
 class RevokeAccessSingle(rxFit: RxFitTaste) : BaseSingle<Void>(rxFit) {
@@ -10,11 +12,13 @@ class RevokeAccessSingle(rxFit: RxFitTaste) : BaseSingle<Void>(rxFit) {
 		signInClient.signOut() // TODO signout or revoke?
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
-						subscriber.onSuccess(it.result)
+						subscriber.onSafeSuccess(it.result)
+					} else {
+						subscriber.onSafeError(it.exception as Throwable)
 					}
 				}
 				.addOnFailureListener {
-					subscriber.onError(it)
+					subscriber.onSafeError(it)
 				}
 	}
 }
