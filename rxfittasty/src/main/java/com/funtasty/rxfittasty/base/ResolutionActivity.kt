@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.IntentSender
 import android.os.Bundle
-import com.funtasty.rxfittasty.util.ParcalablePair
+import com.funtasty.rxfittasty.util.ParcelablePair
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.fitness.FitnessOptions
@@ -38,7 +38,7 @@ class ResolutionActivity : Activity() {
 
 	private fun handleIntent() {
 		try {
-			val pairs: ArrayList<ParcalablePair> = intent.getParcelableArrayListExtra(DATA_TYPES_PAIRS)
+			val pairs: ArrayList<ParcelablePair> = intent.getParcelableArrayListExtra(DATA_TYPES_PAIRS)
 			val optionsBuilder: FitnessOptions.Builder = FitnessOptions.builder()
 			for (pair in pairs) {
 				optionsBuilder.addDataType(pair.first, pair.second)

@@ -9,19 +9,24 @@ import com.google.android.gms.fitness.result.DataReadResponse
 import com.google.android.gms.fitness.result.DataReadResult
 import rx.SingleSubscriber
 
-class HistoryReadSingle(rxFit: RxFitTaste, private val dataReadRequest: DataReadRequest) : BaseSingle<DataReadResponse>(rxFit) {
+class HistoryReadSingle(rxFit: RxFitTaste, private val dataReadRequest: DataReadRequest):
+		BaseSingle<DataReadResponse>(rxFit) {
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in DataReadResponse>) {
+
 		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
 				.readData(dataReadRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful && it.result.status.isSuccess) {
+//						subscriber.isUnsubscribed TODO
+
 						subscriber.onSuccess(it.result)
 					} else {
 						subscriber.onError(it.exception)
 					}
 				}
 				.addOnFailureListener {
+					//	subscriber.isUnsubscribed TODO
 					subscriber.onError(it)
 				}
 	}

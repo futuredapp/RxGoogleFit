@@ -8,10 +8,10 @@ import rx.SingleSubscriber
 
 abstract class BaseSingle<T>(val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTaste.context), Single.OnSubscribe<T> {
 
-	private val subscriptionInfoMap: ArrayList<SingleSubscriber<in T>> = ArrayList()
+	private lateinit var subscriptionInfoMap: SingleSubscriber<in T>
 
 	override fun call(t: SingleSubscriber<in T>) {
-		subscriptionInfoMap.add(t)
+		subscriptionInfoMap = t
 		createGoogleSignInClient(rxFitTaste.getFitnessOptions())
 		if (!GoogleSignIn.hasPermissions(GoogleSignIn.getLastSignedInAccount(rxFitTaste.context), rxFitTaste.getFitnessOptions())) {
 			resolvePermissions()
@@ -35,9 +35,7 @@ abstract class BaseSingle<T>(val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTast
 
 	override fun handleResolutionResult(resultCode: Int) {
 		if (resultCode == Activity.RESULT_OK) {
-			for (t in subscriptionInfoMap) {
-				call(t)
-			}
+			call(subscriptionInfoMap)
 		}
 	}
 

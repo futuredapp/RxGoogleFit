@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.android.gms.fitness.data.DataType
 
-data class ParcalablePair(val first: DataType, val second: Int) : Parcelable {
+data class ParcelablePair(val first: DataType, val second: Int) : Parcelable {
 	constructor(source: Parcel) : this(
 			DataType.CREATOR.createFromParcel(source),
 			source.readInt()
@@ -19,9 +19,9 @@ data class ParcalablePair(val first: DataType, val second: Int) : Parcelable {
 
 	companion object {
 		@JvmField
-		val CREATOR: Parcelable.Creator<ParcalablePair> = object : Parcelable.Creator<ParcalablePair> {
-			override fun createFromParcel(source: Parcel): ParcalablePair = ParcalablePair(source)
-			override fun newArray(size: Int): Array<ParcalablePair?> = arrayOfNulls(size)
+		val CREATOR: Parcelable.Creator<ParcelablePair> = object : Parcelable.Creator<ParcelablePair> {
+			override fun createFromParcel(source: Parcel): ParcelablePair = ParcelablePair(source)
+			override fun newArray(size: Int): Array<ParcelablePair?> = arrayOfNulls(size)
 		}
 	}
 }

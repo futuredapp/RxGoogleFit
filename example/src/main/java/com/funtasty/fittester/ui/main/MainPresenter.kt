@@ -2,7 +2,7 @@ package com.funtasty.fittester.ui.main
 
 import com.funtasty.fittester.data.store.FitnessStore
 import com.funtasty.rxfittasty.base.RxFitTaste
-import com.funtasty.rxfittasty.util.ParcalablePair
+import com.funtasty.rxfittasty.util.ParcelablePair
 import com.google.android.gms.fitness.FitnessOptions
 import com.google.android.gms.fitness.data.HealthDataTypes
 import com.thefuntasty.taste.injection.annotation.scope.PerScreen
@@ -39,8 +39,8 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 
 	private fun getData() {
 
-		val types = ArrayList<ParcalablePair>()
-		types.add(ParcalablePair(HealthDataTypes.TYPE_BLOOD_GLUCOSE, FitnessOptions.ACCESS_READ))
+		val types = ArrayList<ParcelablePair>()
+		types.add(ParcelablePair(HealthDataTypes.TYPE_BLOOD_GLUCOSE, FitnessOptions.ACCESS_READ))
 		rxFitTaste.history.read(fitnessStore.bloodGlucoseRequest)
 				.observeOn(AndroidSchedulers.mainThread())
 				.subscribeOn(Schedulers.io())

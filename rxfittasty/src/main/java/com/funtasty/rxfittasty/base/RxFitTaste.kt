@@ -2,10 +2,10 @@ package com.funtasty.rxfittasty.base
 
 import android.content.Context
 import com.funtasty.rxfittasty.history.HistoryApi
-import com.funtasty.rxfittasty.util.ParcalablePair
+import com.funtasty.rxfittasty.util.ParcelablePair
 import com.google.android.gms.fitness.FitnessOptions
 
-class RxFitTaste(val context: Context, val fitnessDataTypesOptions: ArrayList<ParcalablePair>) {
+class RxFitTaste(val context: Context, val fitnessDataTypesOptions: ArrayList<ParcelablePair>) {
 	//	val ble = Fitness.getBleClient(context, GoogleSignIn.getLastSignedInAccount(context))
 //	val config = Fitness.getConfigClient(context, GoogleSignIn.getLastSignedInAccount(context))
 //	val goals = Fitness.getGoalsClient(context, GoogleSignIn.getLastSignedInAccount(context))
