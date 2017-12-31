@@ -6,12 +6,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import rx.Single
 import rx.SingleSubscriber
 
-abstract class BaseSingle<T>(val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTaste.context), Single.OnSubscribe<T> {
+abstract class BaseSingle<T>(
+		val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTaste.context), Single.OnSubscribe<T> {
 
-	private lateinit var subscriptionInfoMap: SingleSubscriber<in T>
+	private lateinit var subscriptionInfo: SingleSubscriber<in T>
 
 	override fun call(t: SingleSubscriber<in T>) {
-		subscriptionInfoMap = t
+		subscriptionInfo = t
 		createGoogleSignInClient(rxFitTaste.getFitnessOptions())
 		if (!GoogleSignIn.hasPermissions(GoogleSignIn.getLastSignedInAccount(rxFitTaste.context), rxFitTaste.getFitnessOptions())) {
 			resolvePermissions()
@@ -35,7 +36,7 @@ abstract class BaseSingle<T>(val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTast
 
 	override fun handleResolutionResult(resultCode: Int) {
 		if (resultCode == Activity.RESULT_OK) {
-			call(subscriptionInfoMap)
+			call(subscriptionInfo)
 		}
 	}
 
