@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.android.gms.fitness.data.DataType
 
-data class ParcelablePair(val first: DataType, val second: Int) : Parcelable { // TODO change name of first and second
+data class ParcelablePair(val dataType: DataType, val fitnessOptionsAccess: Int) : Parcelable {
 	constructor(source: Parcel) : this(
 			DataType.CREATOR.createFromParcel(source),
 			source.readInt()
@@ -13,8 +13,8 @@ data class ParcelablePair(val first: DataType, val second: Int) : Parcelable { /
 	override fun describeContents() = 0
 
 	override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
-		first.writeToParcel(dest, flags)
-		writeInt(second)
+		dataType.writeToParcel(dest, flags)
+		writeInt(fitnessOptionsAccess)
 	}
 
 	companion object {

@@ -41,7 +41,7 @@ class ResolutionActivity : Activity() {
 			val pairs: ArrayList<ParcelablePair> = intent.getParcelableArrayListExtra(DATA_TYPES_PAIRS)
 			val optionsBuilder: FitnessOptions.Builder = FitnessOptions.builder()
 			for (pair in pairs) {
-				optionsBuilder.addDataType(pair.first, pair.second)
+				optionsBuilder.addDataType(pair.dataType, pair.fitnessOptionsAccess)
 			}
 
 			val signInOptions = GoogleSignInOptions.Builder()

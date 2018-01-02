@@ -17,7 +17,7 @@ class RxFitTaste(val context: Context, val fitnessDataTypesOptions: ArrayList<Pa
 	fun getFitnessOptions(): FitnessOptions {
 		val builder = FitnessOptions.builder()
 		for (pair in fitnessDataTypesOptions) {
-			builder.addDataType(pair.first, pair.second)
+			builder.addDataType(pair.dataType, pair.fitnessOptionsAccess)
 		}
 		return builder.build()
 	}
