@@ -6,8 +6,6 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 26
 
-
-
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 26
@@ -33,20 +31,6 @@ android {
     lintOptions {
         abortOnError false
     }
-}
-
-detekt {
-    version = "1.0.0.RC5-5"
-    profile("main") {
-        config = "$projectDir/rxfittasty/detekt.yml"
-        input = "$projectDir/rxfittasty/src/main"
-    }
-}
-
-ktlint {
-    version = "0.14.0"
-    ignoreFailures = false
-    android = true
 }
 
 dependencies {

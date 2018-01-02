@@ -40,20 +40,6 @@ android {
     }
 }
 
-detekt {
-    version = "1.0.0.RC5-5"
-    profile("main") {
-        config = "$project.projectDir/detekt.yml"
-        input = "$project.projectDir/src/main"
-    }
-}
-
-ktlint {
-    version = "0.14.0"
-    ignoreFailures = false
-    android = true
-}
-
 dependencies {
 
     final DAGGER_VERSION = '2.13'

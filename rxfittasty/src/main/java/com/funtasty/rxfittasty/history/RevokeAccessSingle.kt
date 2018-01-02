@@ -9,7 +9,7 @@ import rx.SingleSubscriber
 class RevokeAccessSingle(rxFit: RxFitTaste) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
 		val signInClient = createGoogleSignInClient(rxFitTaste.getFitnessOptions())
-		signInClient.signOut() // TODO signout or revoke?
+		signInClient.revokeAccess() // TODO signout or revoke?
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
 						subscriber.onSafeSuccess(it.result)
