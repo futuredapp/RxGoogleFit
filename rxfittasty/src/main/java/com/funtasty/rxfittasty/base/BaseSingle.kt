@@ -6,7 +6,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import rx.Single
 import rx.SingleSubscriber
 
-abstract class BaseSingle<T>(
+internal abstract class BaseSingle<T>(
 		val rxFitTaste: RxFitTaste) : BaseRxTaste(rxFitTaste.context), Single.OnSubscribe<T> {
 
 	private lateinit var subscriptionInfo: SingleSubscriber<in T>

@@ -10,7 +10,7 @@ import com.google.android.gms.fitness.request.DataReadRequest
 import com.google.android.gms.fitness.result.DataReadResponse
 import rx.SingleSubscriber
 
-class HistoryReadSingle(
+internal class HistoryReadSingle(
 		rxFit: RxFitTaste,
 		private val dataReadRequest: DataReadRequest) : BaseSingle<DataReadResponse>(rxFit) {
 
@@ -18,6 +18,9 @@ class HistoryReadSingle(
 
 		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
 				.readData(dataReadRequest)
+				.addOnSuccessListener {
+
+				}
 				.addOnCompleteListener {
 					if (it.isSuccessful && it.result.status.isSuccess) {
 						subscriber.onSafeSuccess(it.result)

@@ -9,7 +9,7 @@ import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.data.DataSet
 import rx.SingleSubscriber
 
-class HistoryInsertSingle(rxFit: RxFitTaste, private val insertDataSet: DataSet) : BaseSingle<Void>(rxFit) {
+internal class HistoryInsertSingle(rxFit: RxFitTaste, private val insertDataSet: DataSet) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
 		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
 				.insertData(insertDataSet)

@@ -17,6 +17,7 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 
 	@Inject lateinit var fitnessStore: FitnessStore
 	@Inject lateinit var rxFitTaste: RxFitTaste
+	var i: Int = 0
 
 	override fun attachView(mvpView: MainView?) {
 		super.attachView(mvpView)
@@ -38,18 +39,25 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 	}
 
 	private fun getData() {
+		if (i <= 4) {
+			val types = ArrayList<ParcelablePair>()
+			types.add(ParcelablePair(HealthDataTypes.TYPE_BLOOD_GLUCOSE, FitnessOptions.ACCESS_READ))
+			val requests = arrayOf(fitnessStore.heightRequest, fitnessStore.weightRequest, fitnessStore.heartRateRequest, fitnessStore.bloodGlucoseRequest, fitnessStore.bloodPressureRequest)
+			rxFitTaste.history.read(requests[i])
+					.observeOn(AndroidSchedulers.mainThread())
+					.subscribeOn(Schedulers.io())
+					.subscribe({
+						Timber.d("${it.status} ${requests[i].dataTypes[0].name}")
+						view.setStatusText(it.status.toString())
+						getData()
 
-		val types = ArrayList<ParcelablePair>()
-		types.add(ParcelablePair(HealthDataTypes.TYPE_BLOOD_GLUCOSE, FitnessOptions.ACCESS_READ))
-		rxFitTaste.history.read(fitnessStore.bloodGlucoseRequest)
-				.observeOn(AndroidSchedulers.mainThread())
-				.subscribeOn(Schedulers.io())
-				.subscribe({
-					Timber.d(it.status.toString())
-					view.setStatusText(it.status.toString())
-				}, {
-					Timber.e(it.message)
-				})
+					}, {
+						Timber.e(it.message)
+					})
+
+		} else {
+			i = 0
+		}
 	}
 
 	fun revokeAccess() {

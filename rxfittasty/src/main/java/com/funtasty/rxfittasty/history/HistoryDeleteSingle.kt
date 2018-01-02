@@ -9,7 +9,7 @@ import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.request.DataDeleteRequest
 import rx.SingleSubscriber
 
-class HistoryDeleteSingle(
+internal class HistoryDeleteSingle(
 		rxFit: RxFitTaste,
 		private val dataDeleteRequest: DataDeleteRequest) : BaseSingle<Void>(rxFit) {
 

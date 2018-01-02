@@ -3,7 +3,7 @@ package com.funtasty.rxfittasty.util
 import android.util.Log
 import rx.SingleSubscriber
 
-inline fun <T> SingleSubscriber<T>.onSafeSuccess(t:T) {
+internal inline fun <T> SingleSubscriber<T>.onSafeSuccess(t:T?) {
 	if (!this.isUnsubscribed) {
 		this.onSuccess(t)
 	} else {
@@ -11,7 +11,7 @@ inline fun <T> SingleSubscriber<T>.onSafeSuccess(t:T) {
 	}
 }
 
-inline fun <T> SingleSubscriber<T>.onSafeError(error: Throwable) {
+internal inline fun <T> SingleSubscriber<T>.onSafeError(error: Throwable?) {
 	if (!this.isUnsubscribed) {
 		this.onError(error)
 	} else {

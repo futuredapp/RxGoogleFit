@@ -75,7 +75,7 @@ class FitnessStore @Inject constructor(var rxFit: RxFitTaste) {
 				.setTimeRange(1, now(), TimeUnit.MILLISECONDS)
 				.build()
 
-	private val bloodPressureRequest: DataReadRequest
+	val bloodPressureRequest: DataReadRequest
 		get() = DataReadRequest.Builder()
 				.read(HealthDataTypes.TYPE_BLOOD_PRESSURE)
 				.setTimeRange(1, now(), TimeUnit.MILLISECONDS)
@@ -89,14 +89,14 @@ class FitnessStore @Inject constructor(var rxFit: RxFitTaste) {
 				.build()
 
 	// used to get weight data from Fitness api
-	private val weightRequest: DataReadRequest
+	val weightRequest: DataReadRequest
 		get() = DataReadRequest.Builder()
 				.read(DataType.TYPE_WEIGHT)
 				.setTimeRange(1, now(), TimeUnit.MILLISECONDS)
 				.build()
 
 	// used to get heartrate data from Fitness api
-	private val heartRateRequest: DataReadRequest
+	val heartRateRequest: DataReadRequest
 		get() = DataReadRequest.Builder()
 				.read(DataType.TYPE_HEART_RATE_BPM)
 				.setTimeRange(1, now(), TimeUnit.MILLISECONDS)

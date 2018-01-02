@@ -86,7 +86,7 @@ class MainActivity : BaseActivity(), MainView {
 
 
 	override fun setStatusText(text: String) {
-		this.text.text = text
+		this.text.text = "${this.text.text} \n$text"
 	}
 
 	override fun getPerms() {

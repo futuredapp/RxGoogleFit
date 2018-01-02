@@ -7,7 +7,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.fitness.FitnessOptions
 import java.util.*
 
-abstract class BaseRxTaste(val context: Context) {
+internal abstract class BaseRxTaste(val context: Context) {
 
 	companion object {
 		val observableSet: MutableSet<BaseRxTaste> = HashSet()
@@ -24,6 +24,7 @@ abstract class BaseRxTaste(val context: Context) {
 
 	private fun getSignInOptions(fitnessOptions: FitnessOptions): GoogleSignInOptions {
 		return GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+				.requestEmail()
 				.addExtension(fitnessOptions)
 				.build()
 
