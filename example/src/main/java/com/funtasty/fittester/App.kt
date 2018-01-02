@@ -23,6 +23,4 @@ class App : Application() {
 			Timber.plant(timber.log.Timber.DebugTree())
 		}
 	}
-
-
 }
