@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.android.gms.fitness.data.DataType
 
-data class ParcelablePair(val first: DataType, val second: Int) : Parcelable {
+data class ParcelablePair(val first: DataType, val second: Int) : Parcelable { // TODO change name of first and second
 	constructor(source: Parcel) : this(
 			DataType.CREATOR.createFromParcel(source),
 			source.readInt()

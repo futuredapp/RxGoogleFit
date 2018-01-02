@@ -25,6 +25,7 @@ class HistoryApi(private val rxFitTaste: RxFitTaste) {
 
 	fun insert(@NonNull insertDataSet: DataSet): Single<Void> {
 		return Single.create(HistoryInsertSingle(rxFitTaste, insertDataSet))
+//				.observeOn(Schedulers.io()) TODO all requests
 	}
 
 	fun revokeAccess(): Single<Void> {
