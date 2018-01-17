@@ -18,9 +18,6 @@ internal class HistoryReadSingle(
 
 		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
 				.readData(dataReadRequest)
-				.addOnSuccessListener {
-
-				}
 				.addOnCompleteListener {
 					if (it.isSuccessful && it.result.status.isSuccess) {
 						subscriber.onSafeSuccess(it.result)

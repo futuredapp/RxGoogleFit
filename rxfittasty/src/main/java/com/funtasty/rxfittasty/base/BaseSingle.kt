@@ -37,6 +37,8 @@ internal abstract class BaseSingle<T>(
 	override fun handleResolutionResult(resultCode: Int) {
 		if (resultCode == Activity.RESULT_OK) {
 			call(subscriptionInfo)
+		} else {
+			subscriptionInfo.onError(Throwable("Google Fit Permission not granted"))
 		}
 	}
 

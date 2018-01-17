@@ -49,9 +49,11 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 					.subscribe({
 						Timber.d("${it.status} ${requests[i].dataTypes[0].name}")
 						view.setStatusText(it.status.toString())
+						i++
 						getData()
 
 					}, {
+						i++
 						Timber.e(it.message)
 					})
 

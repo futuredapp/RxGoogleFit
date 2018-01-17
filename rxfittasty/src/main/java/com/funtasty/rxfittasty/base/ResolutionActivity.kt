@@ -9,7 +9,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.fitness.FitnessOptions
 
-class ResolutionActivity : Activity() {
+internal class ResolutionActivity : Activity() {
 
 	companion object {
 		val DATA_TYPES_PAIRS = "data_types"
