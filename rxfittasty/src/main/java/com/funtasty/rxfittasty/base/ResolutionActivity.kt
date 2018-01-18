@@ -31,7 +31,7 @@ internal class ResolutionActivity : Activity() {
 		}
 	}
 
-	override fun onNewIntent(intent: Intent) {
+	override fun onNewIntent(intent: Intent?) {
 		setIntent(intent)
 		handleIntent()
 	}
@@ -59,7 +59,7 @@ internal class ResolutionActivity : Activity() {
 
 	}
 
-	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 		if (requestCode == REQUEST_CODE_RESOLUTION) {
 			setResolutionResultAndFinish(resultCode)
 		} else {
