@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.content.IntentSender
 import android.os.Bundle
+import android.util.Log
 import com.funtasty.rxfittasty.util.ParcelablePair
+import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.fitness.FitnessOptions
@@ -56,11 +58,15 @@ internal class ResolutionActivity : Activity() {
 		} catch (e: NullPointerException) {
 			setResolutionResultAndFinish(Activity.RESULT_CANCELED)
 		}
-
 	}
 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 		if (requestCode == REQUEST_CODE_RESOLUTION) {
+			if (data != null) {
+				val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
+				Log.d("ResolutionActivity", "onActivityResult success: ${result.isSuccess} status: ${result.status.statusCode} resolution: ${result.status.resolution}")
+			}
+
 			setResolutionResultAndFinish(resultCode)
 		} else {
 			setResolutionResultAndFinish(Activity.RESULT_CANCELED)
