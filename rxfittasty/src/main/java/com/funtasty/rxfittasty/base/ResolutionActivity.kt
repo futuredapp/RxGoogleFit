@@ -6,10 +6,15 @@ import android.content.IntentSender
 import android.os.Bundle
 import android.util.Log
 import com.funtasty.rxfittasty.util.ParcelablePair
-import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.fitness.Fitness
 import com.google.android.gms.fitness.FitnessOptions
+import com.google.android.gms.fitness.data.HealthDataTypes
+import com.google.android.gms.fitness.request.DataReadRequest
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.util.concurrent.TimeUnit
 
 internal class ResolutionActivity : Activity() {
 
@@ -50,14 +55,15 @@ internal class ResolutionActivity : Activity() {
 					.addExtension(optionsBuilder.build())
 					.build()
 
-			val signInIntent = GoogleSignIn.getClient(this, signInOptions).signInIntent
-//			startActivityForResult(signInIntent, REQUEST_CODE_RESOLUTION)
+			val signInClient = GoogleSignIn.getClient(this, signInOptions)
+			Log.i("GoogleClientID", "id: ${signInClient.instanceId}")
+			startActivityForResult(signInClient.signInIntent, REQUEST_CODE_RESOLUTION)
 
-			GoogleSignIn.requestPermissions(
-					this,
-					REQUEST_CODE_RESOLUTION,
-					GoogleSignIn.getLastSignedInAccount(this),
-					optionsBuilder.build())
+//			GoogleSignIn.requestPermissions(
+//					this,
+//					REQUEST_CODE_RESOLUTION,
+//					GoogleSignIn.getLastSignedInAccount(this), //TODO Application context
+//					optionsBuilder.build())
 
 			resolutionShown = true
 		} catch (e: IntentSender.SendIntentException) {
@@ -69,12 +75,24 @@ internal class ResolutionActivity : Activity() {
 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 		if (requestCode == REQUEST_CODE_RESOLUTION) {
-			if (data != null) {
-				val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
-				Log.d("ResolutionActivity", "onActivityResult success: ${result.isSuccess} status: ${result.status.statusCode} resolution: ${result.status.resolution}")
-			}
 
-			setResolutionResultAndFinish(resultCode)
+			val fitClient = Fitness.getHistoryClient(this, GoogleSignIn.getLastSignedInAccount(this)) //TODO Application context
+			Log.i("ResolutionActivity", "FitnessClientId: ${fitClient.instanceId}")
+			fitClient.readData(bloodGlucoseRequest)
+					.addOnCompleteListener {
+						if (it.isSuccessful && it.result.status.isSuccess) {
+							Log.d("Fitness data", "success: ${it.isSuccessful} statusCode: ${it.result.status.statusCode}")
+							setResolutionResultAndFinish(resultCode)
+						} else {
+							Log.e("Fitness data", "success: ${it.isSuccessful} statusCode: ${it.result.status.statusCode}")
+							setResolutionResultAndFinish(resultCode)
+						}
+					}
+					.addOnFailureListener {
+						Log.d("Fitness data", "error: ${it.message}")
+						setResolutionResultAndFinish(resultCode)
+					}
+
 		} else {
 			setResolutionResultAndFinish(Activity.RESULT_CANCELED)
 		}
@@ -84,5 +102,15 @@ internal class ResolutionActivity : Activity() {
 		resolutionShown = false
 		BaseRxTaste.onResolutionResult(resultCode)
 		finish()
+	}
+
+	val bloodGlucoseRequest: DataReadRequest
+		get() = DataReadRequest.Builder()
+				.read(HealthDataTypes.TYPE_BLOOD_GLUCOSE)
+				.setTimeRange(1, now(), TimeUnit.MILLISECONDS)
+				.build()
+
+	private fun now(): Long {
+		return LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 	}
 }

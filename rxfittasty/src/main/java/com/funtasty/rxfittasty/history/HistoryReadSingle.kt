@@ -16,7 +16,7 @@ internal class HistoryReadSingle(
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in DataReadResponse>) {
 
-		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
+		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context)) //TODO Application context
 				.readData(dataReadRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful && it.result.status.isSuccess) {
