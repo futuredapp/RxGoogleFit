@@ -22,7 +22,7 @@ internal class HistoryReadSingle(
 					if (it.isSuccessful && it.result.status.isSuccess) {
 						subscriber.onSafeSuccess(it.result)
 					} else {
-						subscriber.onSafeError(it.exception as Throwable)
+						subscriber.onSafeError(it.exception)
 					}
 				}
 				.addOnFailureListener {

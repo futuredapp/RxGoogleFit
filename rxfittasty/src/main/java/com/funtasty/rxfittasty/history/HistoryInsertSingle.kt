@@ -17,7 +17,7 @@ internal class HistoryInsertSingle(rxFit: RxFitTaste, private val insertDataSet:
 					if (it.isSuccessful) {
 						subscriber.onSafeSuccess(it.result)
 					} else {
-						subscriber.onSafeError(it.exception as Throwable)
+						subscriber.onSafeError(it.exception)
 					}
 				}
 				.addOnFailureListener {

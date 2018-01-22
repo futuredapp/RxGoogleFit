@@ -51,7 +51,14 @@ internal class ResolutionActivity : Activity() {
 					.build()
 
 			val signInIntent = GoogleSignIn.getClient(this, signInOptions).signInIntent
-			startActivityForResult(signInIntent, REQUEST_CODE_RESOLUTION)
+//			startActivityForResult(signInIntent, REQUEST_CODE_RESOLUTION)
+
+			GoogleSignIn.requestPermissions(
+					this,
+					REQUEST_CODE_RESOLUTION,
+					GoogleSignIn.getLastSignedInAccount(this),
+					optionsBuilder.build())
+
 			resolutionShown = true
 		} catch (e: IntentSender.SendIntentException) {
 			setResolutionResultAndFinish(Activity.RESULT_CANCELED)
