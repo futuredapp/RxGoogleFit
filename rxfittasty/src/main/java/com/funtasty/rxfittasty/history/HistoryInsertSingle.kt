@@ -13,7 +13,6 @@ import rx.SingleSubscriber
 internal class HistoryInsertSingle(rxFit: RxFitTaste, private val insertDataSet: DataSet) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
 		val fitInsertClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
-		Log.i("HistoryInsertSingle", "clientId: ${fitInsertClient.instanceId} googleApiClient connected: ${fitInsertClient.zzago().isConnected}")
 		fitInsertClient.insertData(insertDataSet)
 				.addOnCompleteListener {
 					if (it.isSuccessful) {

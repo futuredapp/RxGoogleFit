@@ -20,8 +20,11 @@ class GoogleFitModule {
 		val types = ArrayList<ParcelablePair>()
 		types.add(ParcelablePair(HealthDataTypes.TYPE_BLOOD_GLUCOSE, FitnessOptions.ACCESS_READ))
 		types.add(ParcelablePair(HealthDataTypes.TYPE_BLOOD_PRESSURE, FitnessOptions.ACCESS_READ))
+		types.add(ParcelablePair(DataType.TYPE_HEIGHT, FitnessOptions.ACCESS_READ))
 		types.add(ParcelablePair(DataType.TYPE_HEIGHT, FitnessOptions.ACCESS_WRITE))
+		types.add(ParcelablePair(DataType.TYPE_WEIGHT, FitnessOptions.ACCESS_READ))
 		types.add(ParcelablePair(DataType.TYPE_WEIGHT, FitnessOptions.ACCESS_WRITE))
+		types.add(ParcelablePair(DataType.TYPE_HEART_RATE_BPM, FitnessOptions.ACCESS_READ))
 		types.add(ParcelablePair(DataType.TYPE_HEART_RATE_BPM, FitnessOptions.ACCESS_WRITE))
 		return RxFitTaste(context, types)
 	}

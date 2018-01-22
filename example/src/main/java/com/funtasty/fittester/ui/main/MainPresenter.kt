@@ -2,9 +2,6 @@ package com.funtasty.fittester.ui.main
 
 import com.funtasty.fittester.data.store.FitnessStore
 import com.funtasty.rxfittasty.base.RxFitTaste
-import com.funtasty.rxfittasty.util.ParcelablePair
-import com.google.android.gms.fitness.FitnessOptions
-import com.google.android.gms.fitness.data.HealthDataTypes
 import com.thefuntasty.taste.injection.annotation.scope.PerScreen
 import com.thefuntasty.taste.mvp.BasePresenter
 import rx.android.schedulers.AndroidSchedulers
@@ -40,9 +37,7 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 
 	private fun getData() {
 		if (i <= 4) {
-			val types = ArrayList<ParcelablePair>()
-			types.add(ParcelablePair(HealthDataTypes.TYPE_BLOOD_GLUCOSE, FitnessOptions.ACCESS_READ))
-			val requests = arrayOf(fitnessStore.heightRequest, fitnessStore.weightRequest, fitnessStore.heartRateRequest, fitnessStore.bloodGlucoseRequest, fitnessStore.bloodPressureRequest)
+			val requests = arrayOf(fitnessStore.bloodGlucoseRequest, fitnessStore.weightRequest, fitnessStore.heartRateRequest, fitnessStore.heightRequest, fitnessStore.bloodPressureRequest)
 			rxFitTaste.history.read(requests[i])
 					.observeOn(AndroidSchedulers.mainThread())
 					.subscribeOn(Schedulers.io())
@@ -52,6 +47,27 @@ class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
 						i++
 						getData()
 
+					}, {
+						Timber.e(it.message)
+					})
+
+		} else {
+			i = 0
+			setData()
+		}
+	}
+
+	private fun setData() {
+		val requests = arrayOf(fitnessStore.getHeightDataSet(1.2f, fitnessStore.now()), fitnessStore.getWeightDataSet(120f, fitnessStore.now()))
+		if (i <= 1) {
+			rxFitTaste.history.insert(requests[i])
+					.observeOn(AndroidSchedulers.mainThread())
+					.subscribeOn(Schedulers.io())
+					.subscribe({
+						Timber.d(" ${requests[i].dataType.name}")
+						view.setStatusText("insert: ${requests[i].dataType.name} OK")
+						i++
+						setData()
 					}, {
 						i++
 						Timber.e(it.message)

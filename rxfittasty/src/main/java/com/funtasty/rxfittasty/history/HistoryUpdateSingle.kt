@@ -13,7 +13,6 @@ import rx.SingleSubscriber
 internal class HistoryUpdateSingle(rxFit: RxFitTaste, private val dataUpdateRequest: DataUpdateRequest) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
 		val fitUpdateClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
-		Log.i("HistoryUpdateSingle", "clientId: ${fitUpdateClient.instanceId} googleApiClient connected: ${fitUpdateClient.zzago().isConnected}")
 		fitUpdateClient
 				.updateData(dataUpdateRequest)
 				.addOnCompleteListener {

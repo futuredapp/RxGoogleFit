@@ -17,7 +17,6 @@ internal class HistoryDeleteSingle(
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
 
 		val fitDeleteClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
-		Log.i("HistoryDeleteSingle", "clientId: ${fitDeleteClient.instanceId} googleApiClient connected: ${fitDeleteClient.zzago().isConnected}")
 		fitDeleteClient
 				.deleteData(dataDeleteRequest)
 				.addOnCompleteListener {

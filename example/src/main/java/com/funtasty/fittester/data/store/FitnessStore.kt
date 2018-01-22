@@ -184,17 +184,17 @@ class FitnessStore @Inject constructor(var rxFit: RxFitTaste) {
 				.observeOn(Schedulers.io())
 	}
 
-	private fun getWeightDataSet(weight: Float?, date: Long): DataSet {
+	public fun getWeightDataSet(weight: Float?, date: Long): DataSet {
 		return createDataForRequest(DataType.TYPE_WEIGHT, DataSource.TYPE_RAW, weight, date, date, TimeUnit.MILLISECONDS)
 	}
 
-	private fun getHeightDataSet(height: Float?, date: Long): DataSet {
+	public fun getHeightDataSet(height: Float?, date: Long): DataSet {
 		return createDataForRequest(DataType.TYPE_HEIGHT, DataSource.TYPE_RAW, height, date, date, TimeUnit.MILLISECONDS)
 	}
 
 	private fun createDataForRequest(dataType: DataType, dataSourceType: Int, value: Float?, startTime: Long, endTime: Long, timeUnit: TimeUnit): DataSet {
 		val dataSource = DataSource.Builder()
-//				.setAppPackageName(context.getApplicationContext().getPackageName())
+				.setAppPackageName(rxFit.context.applicationContext.packageName)
 				.setDataType(dataType)
 				.setType(dataSourceType)
 				.build()
@@ -208,7 +208,7 @@ class FitnessStore @Inject constructor(var rxFit: RxFitTaste) {
 		return dataSet
 	}
 
-	private fun now(): Long {
+	public fun now(): Long {
 		return LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 	}
 
