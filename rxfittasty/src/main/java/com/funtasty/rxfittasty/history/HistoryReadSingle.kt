@@ -18,12 +18,13 @@ internal class HistoryReadSingle(
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in DataReadResponse>) {
 
 		val fitClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
-		Log.i("HistoryReadSingle", "clientId: ${fitClient.instanceId}")
+		Log.i("HistoryReadSingle", "clientId: ${fitClient.instanceId} googleApiClient connected: ${fitClient.zzago().isConnected}")
 		fitClient.readData(dataReadRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful && it.result.status.isSuccess) {
 						subscriber.onSafeSuccess(it.result)
 					} else {
+						Log.e("HistoryReadSingle","unsuccessful")
 						subscriber.onSafeError(it.exception)
 					}
 				}

@@ -1,5 +1,6 @@
 package com.funtasty.rxfittasty.history
 
+import android.util.Log
 import com.funtasty.rxfittasty.base.BaseSingle
 import com.funtasty.rxfittasty.base.RxFitTaste
 import com.funtasty.rxfittasty.util.onSafeError
@@ -11,12 +12,14 @@ import rx.SingleSubscriber
 
 internal class HistoryInsertSingle(rxFit: RxFitTaste, private val insertDataSet: DataSet) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
-		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
-				.insertData(insertDataSet)
+		val fitInsertClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
+		Log.i("HistoryInsertSingle", "clientId: ${fitInsertClient.instanceId} googleApiClient connected: ${fitInsertClient.zzago().isConnected}")
+		fitInsertClient.insertData(insertDataSet)
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
 						subscriber.onSafeSuccess(it.result)
 					} else {
+						Log.e("HistoryInsertSingle","unsuccessful")
 						subscriber.onSafeError(it.exception)
 					}
 				}

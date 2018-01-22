@@ -58,13 +58,13 @@ internal class ResolutionActivity : Activity() {
 
 			val signInClient = GoogleSignIn.getClient(this.applicationContext, signInOptions)
 			Log.i("ResolutionActivity", "GoogleClientID id: ${signInClient.instanceId}")
-			startActivityForResult(signInClient.signInIntent, REQUEST_CODE_RESOLUTION)
+//			startActivityForResult(signInClient.signInIntent, REQUEST_CODE_RESOLUTION)
 
-//			GoogleSignIn.requestPermissions(
-//					this,
-//					REQUEST_CODE_RESOLUTION,
-//					GoogleSignIn.getLastSignedInAccount(this.applicationContext),
-//					optionsBuilder.build())
+			GoogleSignIn.requestPermissions(
+					this,
+					REQUEST_CODE_RESOLUTION,
+					GoogleSignIn.getLastSignedInAccount(this.applicationContext),
+					optionsBuilder.build())
 
 			resolutionShown = true
 		} catch (e: IntentSender.SendIntentException) {

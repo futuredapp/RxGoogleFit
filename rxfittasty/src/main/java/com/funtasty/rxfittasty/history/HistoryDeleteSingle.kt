@@ -1,5 +1,6 @@
 package com.funtasty.rxfittasty.history
 
+import android.util.Log
 import com.funtasty.rxfittasty.base.BaseSingle
 import com.funtasty.rxfittasty.base.RxFitTaste
 import com.funtasty.rxfittasty.util.onSafeError
@@ -14,12 +15,16 @@ internal class HistoryDeleteSingle(
 		private val dataDeleteRequest: DataDeleteRequest) : BaseSingle<Void>(rxFit) {
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
-		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
+
+		val fitDeleteClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
+		Log.i("HistoryDeleteSingle", "clientId: ${fitDeleteClient.instanceId} googleApiClient connected: ${fitDeleteClient.zzago().isConnected}")
+		fitDeleteClient
 				.deleteData(dataDeleteRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
 						subscriber.onSafeSuccess(it.result)
 					} else {
+						Log.e("HistoryDeleteSingle","unsuccessful")
 						subscriber.onSafeError(it.exception as Throwable)
 					}
 				}
