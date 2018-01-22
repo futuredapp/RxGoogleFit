@@ -17,7 +17,7 @@ internal class HistoryReadSingle(
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in DataReadResponse>) {
 
-		val fitClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context)) //TODO Application context
+		val fitClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
 		Log.i("HistoryReadSingle", "clientId: ${fitClient.instanceId}")
 		fitClient.readData(dataReadRequest)
 				.addOnCompleteListener {

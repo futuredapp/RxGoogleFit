@@ -53,16 +53,17 @@ internal class ResolutionActivity : Activity() {
 
 			val signInOptions = GoogleSignInOptions.Builder()
 					.addExtension(optionsBuilder.build())
+					.requestEmail()
 					.build()
 
-			val signInClient = GoogleSignIn.getClient(this, signInOptions)
+			val signInClient = GoogleSignIn.getClient(this.applicationContext, signInOptions)
 			Log.i("ResolutionActivity", "GoogleClientID id: ${signInClient.instanceId}")
 			startActivityForResult(signInClient.signInIntent, REQUEST_CODE_RESOLUTION)
 
 //			GoogleSignIn.requestPermissions(
 //					this,
 //					REQUEST_CODE_RESOLUTION,
-//					GoogleSignIn.getLastSignedInAccount(this), //TODO Application context
+//					GoogleSignIn.getLastSignedInAccount(this.applicationContext),
 //					optionsBuilder.build())
 
 			resolutionShown = true
@@ -76,7 +77,7 @@ internal class ResolutionActivity : Activity() {
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 		if (requestCode == REQUEST_CODE_RESOLUTION) {
 
-			val fitClient = Fitness.getHistoryClient(this, GoogleSignIn.getLastSignedInAccount(this)) //TODO Application context
+			val fitClient = Fitness.getHistoryClient(this.applicationContext, GoogleSignIn.getLastSignedInAccount(this.applicationContext))
 			Log.i("ResolutionActivity", "FitnessClientId: ${fitClient.instanceId}")
 			fitClient.readData(bloodGlucoseRequest)
 					.addOnCompleteListener {

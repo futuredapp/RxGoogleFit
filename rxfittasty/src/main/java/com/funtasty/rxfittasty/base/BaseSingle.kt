@@ -13,7 +13,7 @@ internal abstract class BaseSingle<T>(
 
 	override fun call(t: SingleSubscriber<in T>) {
 		subscriptionInfo = t
-		createGoogleSignInClient(rxFitTaste.getFitnessOptions())
+//		createGoogleSignInClient(rxFitTaste.getFitnessOptions())
 		if (!GoogleSignIn.hasPermissions(GoogleSignIn.getLastSignedInAccount(rxFitTaste.context), rxFitTaste.getFitnessOptions())) {
 			resolvePermissions()
 		} else {
