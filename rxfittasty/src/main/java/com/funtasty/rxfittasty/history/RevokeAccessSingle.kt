@@ -4,7 +4,6 @@ import com.funtasty.rxfittasty.base.BaseSingle
 import com.funtasty.rxfittasty.base.RxFitTaste
 import com.funtasty.rxfittasty.util.onSafeError
 import com.funtasty.rxfittasty.util.onSafeSuccess
-import rx.Single
 import rx.SingleSubscriber
 
 internal class RevokeAccessSingle(rxFit: RxFitTaste) : BaseSingle<Void>(rxFit) {
@@ -12,7 +11,6 @@ internal class RevokeAccessSingle(rxFit: RxFitTaste) : BaseSingle<Void>(rxFit) {
 		val signInClient = createGoogleSignInClient(rxFitTaste.getFitnessOptions())
 		signInClient.signOut() // TODO signout or revoke?
 				.addOnCompleteListener {
-
 					if (it.isSuccessful) {
 						subscriber.onSafeSuccess(it.result)
 					} else {

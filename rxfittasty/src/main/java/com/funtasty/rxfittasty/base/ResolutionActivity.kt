@@ -56,7 +56,7 @@ internal class ResolutionActivity : Activity() {
 					.build()
 
 			val signInClient = GoogleSignIn.getClient(this, signInOptions)
-			Log.i("GoogleClientID", "id: ${signInClient.instanceId}")
+			Log.i("ResolutionActivity", "GoogleClientID id: ${signInClient.instanceId}")
 			startActivityForResult(signInClient.signInIntent, REQUEST_CODE_RESOLUTION)
 
 //			GoogleSignIn.requestPermissions(

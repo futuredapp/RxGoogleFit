@@ -1,6 +1,7 @@
 package com.funtasty.rxfittasty.base
 
 import android.content.Context
+import android.util.Log
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -20,7 +21,11 @@ internal abstract class BaseRxTaste(val context: Context) {
 		}
 	}
 
-	fun createGoogleSignInClient(fitnessOptions: FitnessOptions): GoogleSignInClient = GoogleSignIn.getClient(context, getSignInOptions(fitnessOptions))
+	fun createGoogleSignInClient(fitnessOptions: FitnessOptions): GoogleSignInClient {
+		val signInClient = GoogleSignIn.getClient(context, getSignInOptions(fitnessOptions))
+		Log.i("BaseRxTaste", "clientId: ${signInClient.instanceId}")
+		return signInClient
+	}
 
 	private fun getSignInOptions(fitnessOptions: FitnessOptions): GoogleSignInOptions {
 		return GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

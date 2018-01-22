@@ -1,5 +1,6 @@
 package com.funtasty.rxfittasty.history
 
+import android.util.Log
 import com.funtasty.rxfittasty.base.BaseSingle
 import com.funtasty.rxfittasty.base.RxFitTaste
 import com.funtasty.rxfittasty.util.onSafeError
@@ -16,8 +17,9 @@ internal class HistoryReadSingle(
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in DataReadResponse>) {
 
-		Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context)) //TODO Application context
-				.readData(dataReadRequest)
+		val fitClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context)) //TODO Application context
+		Log.i("HistoryReadSingle", "clientId: ${fitClient.instanceId}")
+		fitClient.readData(dataReadRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful && it.result.status.isSuccess) {
 						subscriber.onSafeSuccess(it.result)
