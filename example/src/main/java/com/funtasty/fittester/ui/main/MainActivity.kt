@@ -23,7 +23,8 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainView {
 
-	@Inject lateinit var presenter: MainPresenter
+	@Inject
+	lateinit var presenter: MainPresenter
 
 	private val PERMS_REQUEST_CODE = 2121
 	private val RESOLUTION = 2122
@@ -79,7 +80,7 @@ class MainActivity : BaseActivity(), MainView {
 	private fun isPermsGranted(): Boolean {
 		val bodyPerm = ContextCompat.checkSelfPermission(this, Manifest.permission.BODY_SENSORS) == PackageManager.PERMISSION_GRANTED
 		val locationPerm = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
-		val fitnessPerm = GoogleSignIn.hasPermissions(GoogleSignIn.getLastSignedInAccount(this), getFitnessOptions)
+		val fitnessPerm = GoogleSignIn.hasPermissions(GoogleSignIn.getAccountForExtension(this, getFitnessOptions), getFitnessOptions)
 		Timber.d("body perm: $bodyPerm \nlocation perm: $locationPerm \nfitness perm: $fitnessPerm")
 		return bodyPerm && locationPerm && fitnessPerm
 	}

@@ -16,14 +16,14 @@ internal class HistoryDeleteSingle(
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
 
-		val fitDeleteClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
+		val fitDeleteClient = Fitness.getHistoryClient(context, GoogleSignIn.getAccountForExtension(context, rxFitTaste.getFitnessOptions()))
 		fitDeleteClient
 				.deleteData(dataDeleteRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
 						subscriber.onSafeSuccess(it.result)
 					} else {
-						Log.e("HistoryDeleteSingle","unsuccessful")
+						Log.e("HistoryDeleteSingle", "unsuccessful")
 						subscriber.onSafeError(it.exception as Throwable)
 					}
 				}

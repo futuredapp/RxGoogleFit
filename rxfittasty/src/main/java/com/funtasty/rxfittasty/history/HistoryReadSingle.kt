@@ -17,7 +17,7 @@ internal class HistoryReadSingle(
 
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in DataReadResponse>) {
 
-		val account = GoogleSignIn.getLastSignedInAccount(context)
+		val account = GoogleSignIn.getAccountForExtension(context, rxFitTaste.getFitnessOptions())
 
 		val fitClient = Fitness.getHistoryClient(context, account)
 		fitClient.readData(dataReadRequest)

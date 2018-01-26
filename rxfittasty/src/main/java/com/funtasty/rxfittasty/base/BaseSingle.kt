@@ -13,7 +13,7 @@ internal abstract class BaseSingle<T>(
 
 	override fun call(t: SingleSubscriber<in T>) {
 		subscriptionInfo = t
-		val account = GoogleSignIn.getLastSignedInAccount(rxFitTaste.context)
+		val account = GoogleSignIn.getAccountForExtension(rxFitTaste.context, rxFitTaste.getFitnessOptions())
 		if (!GoogleSignIn.hasPermissions(account, rxFitTaste.getFitnessOptions())) {
 			resolvePermissions()
 		} else {

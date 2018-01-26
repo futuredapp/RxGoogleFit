@@ -12,14 +12,14 @@ import rx.SingleSubscriber
 
 internal class HistoryUpdateSingle(rxFit: RxFitTaste, private val dataUpdateRequest: DataUpdateRequest) : BaseSingle<Void>(rxFit) {
 	override fun onGoogleApiClientReady(subscriber: SingleSubscriber<in Void>) {
-		val fitUpdateClient = Fitness.getHistoryClient(context, GoogleSignIn.getLastSignedInAccount(context))
+		val fitUpdateClient = Fitness.getHistoryClient(context, GoogleSignIn.getAccountForExtension(context, rxFitTaste.getFitnessOptions()))
 		fitUpdateClient
 				.updateData(dataUpdateRequest)
 				.addOnCompleteListener {
 					if (it.isSuccessful) {
 						subscriber.onSafeSuccess(it.result)
 					} else {
-						Log.e("HistoryUpdateSingle","unsuccessful")
+						Log.e("HistoryUpdateSingle", "unsuccessful")
 						subscriber.onSafeError(it.exception as Throwable)
 					}
 				}

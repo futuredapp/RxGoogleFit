@@ -63,7 +63,7 @@ internal class ResolutionActivity : Activity() {
 
 //		val account = GoogleSignIn.getLastSignedInAccount(this.applicationContext) 						// not working
 //		val account = getAccount(signInOptions)															// not working
-		val account = GoogleSignIn.getAccountForExtension(this.applicationContext, signInOptionsExt)	// not working
+		val account = GoogleSignIn.getAccountForExtension(this.applicationContext, signInOptionsExt)    // not working
 
 		requestPermisions(account, signInOptionsExt)
 	}
@@ -121,7 +121,7 @@ internal class ResolutionActivity : Activity() {
 
 
 	private fun tryGetData() {
-		val account = GoogleSignIn.getLastSignedInAccount(this.applicationContext)
+		val account = GoogleSignIn.getAccountForExtension(this.applicationContext, signInOptionsExt)
 
 		val fitClient = Fitness.getHistoryClient(this.applicationContext, account)
 		fitClient.readData(bloodGlucoseRequest)
