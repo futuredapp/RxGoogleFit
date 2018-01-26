@@ -134,6 +134,5 @@ class MainActivity : BaseActivity(), MainView {
 				.inject(this)
 	}
 
-
 	override fun getActivityLayout(): Int = R.layout.activity_main
 }

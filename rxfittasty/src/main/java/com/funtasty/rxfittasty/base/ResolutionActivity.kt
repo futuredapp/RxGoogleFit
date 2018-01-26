@@ -55,20 +55,17 @@ internal class ResolutionActivity : Activity() {
 		for (pair in pairs) {
 			optionsBuilder.addDataType(pair.dataType, pair.fitnessOptionsAccess)
 		}
-			signInOptionsExt = optionsBuilder.build()
-			signInOptions = GoogleSignInOptions.Builder()
-					.addExtension(signInOptionsExt)
-					.build()
+		signInOptionsExt = optionsBuilder.build()
+		signInOptions = GoogleSignInOptions.Builder()
+				.addExtension(signInOptionsExt)
+				.build()
 
 
+//		val account = GoogleSignIn.getLastSignedInAccount(this.applicationContext) 						// not working
+//		val account = getAccount(signInOptions)															// not working
+		val account = GoogleSignIn.getAccountForExtension(this.applicationContext, signInOptionsExt)	// not working
 
-		val account = GoogleSignIn.getLastSignedInAccount(this.applicationContext)
-		if (account == null) {
-			getAccount(signInOptions)
-		} else {
-			requestPermisions(account, signInOptionsExt)
-		}
-
+		requestPermisions(account, signInOptionsExt)
 	}
 
 	private fun getAccount(signInOptions: GoogleSignInOptions) {
@@ -78,9 +75,9 @@ internal class ResolutionActivity : Activity() {
 	}
 
 	private fun requestPermisions(account: GoogleSignInAccount, signInOptions: GoogleSignInOptionsExtension) {
-//		if (GoogleSignIn.hasPermissions(account, signInOptions)) {
-//			setResolutionResultAndFinish(Activity.RESULT_OK)
-//		} else {
+		if (GoogleSignIn.hasPermissions(account, signInOptions)) {
+			setResolutionResultAndFinish(Activity.RESULT_OK)
+		} else {
 			GoogleSignIn.requestPermissions(
 					this,
 					REQUEST_PERMISSIONS_RESOLUTION,
@@ -88,7 +85,7 @@ internal class ResolutionActivity : Activity() {
 					signInOptions)
 
 			resolutionShown = true
-//		}
+		}
 	}
 
 	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -108,8 +105,8 @@ internal class ResolutionActivity : Activity() {
 	}
 
 	private fun handleAccountRequest(requestCode: Int, data: Intent?) {
-			val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-			handleSignInResult(task)
+		val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+		handleSignInResult(task)
 	}
 
 	private fun handleSignInResult(task: Task<GoogleSignInAccount>) {
